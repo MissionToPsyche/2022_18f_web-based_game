@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class psycheResourceController : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class psycheResourceController : MonoBehaviour
     public float velocityLoss = 0;
     public float distance = 0f;
 
+    public float waitTime = 1.5f;
+    public float timer = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +28,10 @@ public class psycheResourceController : MonoBehaviour
     void Update()
     {
         if(fuel <= 0){
+            timer += Time.deltaTime;
+            if(timer > waitTime){
+                changeScene();
+            }
             return;
         }
 
@@ -49,5 +57,9 @@ public class psycheResourceController : MonoBehaviour
 
     public float getFuel(){
         return fuel;
+    }
+
+    public void changeScene(){
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "MainMenuScene");
     }
 }
