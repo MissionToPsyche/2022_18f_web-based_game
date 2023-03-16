@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuSceneTransition : MonoBehaviour
+public class ShopNavigation : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class MainMenuSceneTransition : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "MainGameScene");
     }
 
-    public void switchSceneToShop(){
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "ShopScene");
+    public void switchSceneToMainMenu(){
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "MainMenuScene");
     }
 }

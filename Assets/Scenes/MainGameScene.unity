@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa1d9c1a1264d04e81efbe4c6005435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuel: 30
+  fuel: 10
   startingFuel: 0
   startingFuelLossSpeed: 1
   FuelLossSpeed: 1
@@ -1113,6 +1113,8 @@ MonoBehaviour:
   velocity: 50
   velocityLoss: 0.0005
   distance: 0
+  waitTime: 1.5
+  timer: 0
 --- !u!1 &1631299434
 GameObject:
   m_ObjectHideFlags: 0
