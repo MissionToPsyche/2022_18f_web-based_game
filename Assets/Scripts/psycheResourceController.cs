@@ -18,6 +18,8 @@ public class psycheResourceController : MonoBehaviour
     public float waitTime = 1.5f;
     public float timer = 0.0f;
 
+    CoinManager coinManager = new CoinManager();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +62,10 @@ public class psycheResourceController : MonoBehaviour
     }
 
     public void changeScene(){
+        coinManager.addCoins(100);
+        int x = coinManager.getCoinsCount();
+        Debug.Log(x);
+        
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "MainMenuScene");
     }
 }

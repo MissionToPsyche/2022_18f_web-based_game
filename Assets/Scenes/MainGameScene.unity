@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa1d9c1a1264d04e81efbe4c6005435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuel: 10
+  fuel: 2
   startingFuel: 0
   startingFuelLossSpeed: 1
   FuelLossSpeed: 1
