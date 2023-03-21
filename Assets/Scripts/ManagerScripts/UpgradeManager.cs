@@ -68,19 +68,47 @@ public class UpgradeManager : MonoBehaviour
         if(upgradeType[0] == false && coinManager.ableToSpend(upgradePrices[0])){
             coinManager.removeCoins(upgradePrices[0]);
             upgradeType[0] = true;
+            Debug.Log(coinManager.getCoinsCount());
             return true;
         }
         else if(upgradeType[1] == false && coinManager.ableToSpend(upgradePrices[1])){
             coinManager.removeCoins(upgradePrices[1]);
             upgradeType[1] = true;
+            Debug.Log(coinManager.getCoinsCount());
             return true;
         }
         else if(upgradeType[2] == false && coinManager.ableToSpend(upgradePrices[2])){
             coinManager.removeCoins(upgradePrices[2]);
             upgradeType[2] = true;
+            Debug.Log(coinManager.getCoinsCount());
             return true;
         }
         return false;
+    }
+
+    public bool[] getUpgradeArray(string upgradeName){
+        switch(upgradeName){
+            case "launchers":
+                return launchers;
+                break;
+            case "solarPanels":
+                return solarPanels;
+                break;
+            case "weightRedistributions":
+                return weightRedistributions;
+                break; 
+            case "navigationControls":
+                return navigationControls;
+                break;
+            case "softwareUpdates":
+                return softwareUpdates;
+                break;
+            case "wealthExpediters":
+                return wealthExpediters;
+                break; 
+            default:
+                return null;
+        }
     }
 
     
