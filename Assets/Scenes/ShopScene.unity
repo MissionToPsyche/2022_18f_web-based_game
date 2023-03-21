@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 10397497}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgradeNavigationControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &10397497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1476,7 +1488,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 363520301}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgadeSoftwareUpdates
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &363520301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1787,7 +1811,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 453432740}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgradeSolarPanels
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &453432740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2748,7 +2784,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 658690636}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgradeWealthExpediters
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &658690636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4704,7 +4752,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1644296789}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgradeWeightRedistributions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1644296789
 MonoBehaviour:
   m_ObjectHideFlags: 0
