@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 10397497}
   - component: {fileID: 10397496}
   m_Layer: 5
-  m_Name: NavigationControlButton
+  m_Name: FuelEfficiencyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 10397497}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgradeFuelEfficiency
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &10397497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,6 +1014,7 @@ GameObject:
   - component: {fileID: 282348179}
   - component: {fileID: 282348178}
   - component: {fileID: 282348180}
+  - component: {fileID: 282348181}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1034,7 +1047,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &282348180
 MonoBehaviour:
@@ -1049,6 +1062,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinCountText: {fileID: 1918673655}
+--- !u!114 &282348181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282348177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722120dbc4f0e834eb404ea17eff8827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCountText: {fileID: 1918673655}
+  launcherUpgrade1: {fileID: 1148853392}
+  launcherUpgrade2: {fileID: 1085180428}
+  launcherUpgrade3: {fileID: 897042796}
+  SolarPanelUpgrade1: {fileID: 2082753715}
+  SolarPanelUpgrade2: {fileID: 870770391}
+  SolarPanelUpgrade3: {fileID: 2141278631}
+  WeightRedistributionUpgrade1: {fileID: 794609867}
+  WeightRedistributionUpgrade2: {fileID: 1757735225}
+  WeightRedistributionUpgrade3: {fileID: 2086017959}
+  FuelEfficiencyUpgrade1: {fileID: 0}
+  FuelEfficiencyUpgrade2: {fileID: 0}
+  FuelEfficiencyUpgrade3: {fileID: 0}
+  SoftwareUpdateUpgrade1: {fileID: 1344278950}
+  SoftwareUpdateUpgrade2: {fileID: 1518582681}
+  SoftwareUpdateUpgrade3: {fileID: 2090664815}
+  WealthExpediterUpgrade1: {fileID: 1766367839}
+  WealthExpediterUpgrade2: {fileID: 2066620663}
+  WealthExpediterUpgrade3: {fileID: 474435578}
 --- !u!1 &282439439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1277,7 @@ RectTransform:
   - {fileID: 1955708415}
   - {fileID: 1918673654}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1444,7 +1488,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 363520301}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgadeSoftwareUpdates
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &363520301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1671,7 +1727,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &453432737
 GameObject:
@@ -1755,7 +1811,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 453432740}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgradeSolarPanels
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &453432740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1877,7 +1945,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &468025985
 MonoBehaviour:
@@ -2716,7 +2784,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 658690636}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgradeWealthExpediters
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &658690636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2837,7 +2917,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 711429141}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgradeLaunchers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &711429141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3007,7 +3099,7 @@ Transform:
   - {fileID: 2066620664}
   - {fileID: 474435579}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &823269266
 GameObject:
@@ -3021,7 +3113,7 @@ GameObject:
   - component: {fileID: 823269269}
   - component: {fileID: 823269268}
   m_Layer: 5
-  m_Name: SoftwareUpdateText
+  m_Name: FuelEfficiencyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3067,7 +3159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Navigation Control
+  m_text: Fuel Efficiency
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3354,6 +3446,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1045196567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.914299
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.34869003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.2291728
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030217, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780568067700030219, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
+      propertyPath: m_Name
+      value: TransitionLoader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1232bf8c365aaf4bb5796c806a947b6, type: 3}
 --- !u!1 &1085180428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3739,7 +3888,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148853392
 GameObject:
@@ -4132,7 +4281,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 282348178}
         m_TargetAssemblyTypeName: ShopNavigation, Assembly-CSharp
-        m_MethodName: switchSceneToGame
+        m_MethodName: switchSceneToGameJulian
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4455,7 +4604,7 @@ GameObject:
   - component: {fileID: 1615917864}
   - component: {fileID: 1615917863}
   m_Layer: 5
-  m_Name: FuelEfficiencyText
+  m_Name: SoftwareUpdateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4660,7 +4809,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1644296789}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282348181}
+        m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
+        m_MethodName: upgradeWeightRedistributions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1644296789
 MonoBehaviour:
   m_ObjectHideFlags: 0

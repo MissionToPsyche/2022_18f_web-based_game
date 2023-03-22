@@ -21,6 +21,13 @@ public class ShopNavigation : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "MainGameScene");
     }
 
+    public void switchSceneToGameJulian()
+    {
+        GameManager.runStart = true;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("GameSceneJulian");
+    }
+
     public void switchSceneToMainMenu(){
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "MainMenuScene");
     }

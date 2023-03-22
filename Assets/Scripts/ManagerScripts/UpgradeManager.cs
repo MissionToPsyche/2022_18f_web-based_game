@@ -9,14 +9,14 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private static bool[] launchers = new bool[] {false,false,false};
     [SerializeField] private static bool[] solarPanels = new bool[] {false,false,false};
     [SerializeField] private static bool[] weightRedistributions = new bool[] {false,false,false};
-    [SerializeField] private static bool[] navigationControls = new bool[] {false,false,false};
+    [SerializeField] private static bool[] fuelEfficiency = new bool[] {false,false,false};
     [SerializeField] private static bool[] softwareUpdates = new bool[] {false,false,false};
     [SerializeField] private static bool[] wealthExpediters = new bool[] {false,false,false};
 
     [SerializeField] private static int[] launchersPrices = new int[] {100,300,500};
     [SerializeField] private static int[] solarPanelsPrices = new int[] {100,300,500};
     [SerializeField] private static int[] weightRedistributionsPrices = new int[] {100,300,500};
-    [SerializeField] private static int[] navigationControlsPrices = new int[] {100,300,500};
+    [SerializeField] private static int[] fuelEfficiencyPrices = new int[] {100,300,500};
     [SerializeField] private static int[] softwareUpdatesPrices = new int[] {100,300,500};
     [SerializeField] private static int[] wealthExpeditersPrices = new int[] {100,300,500};
 
@@ -50,9 +50,9 @@ public class UpgradeManager : MonoBehaviour
                 upgradeType = weightRedistributions;
                 upgradePrices = weightRedistributionsPrices;
                 break; 
-            case "navigationControls":
-                upgradeType = navigationControls;
-                upgradePrices = navigationControlsPrices;
+            case "fuelEfficiency":
+                upgradeType = fuelEfficiency;
+                upgradePrices = fuelEfficiencyPrices;
                 break;
             case "softwareUpdates":
                 upgradeType = softwareUpdates;
@@ -68,19 +68,47 @@ public class UpgradeManager : MonoBehaviour
         if(upgradeType[0] == false && coinManager.ableToSpend(upgradePrices[0])){
             coinManager.removeCoins(upgradePrices[0]);
             upgradeType[0] = true;
+            Debug.Log(coinManager.getCoinsCount());
             return true;
         }
         else if(upgradeType[1] == false && coinManager.ableToSpend(upgradePrices[1])){
             coinManager.removeCoins(upgradePrices[1]);
             upgradeType[1] = true;
+            Debug.Log(coinManager.getCoinsCount());
             return true;
         }
         else if(upgradeType[2] == false && coinManager.ableToSpend(upgradePrices[2])){
             coinManager.removeCoins(upgradePrices[2]);
             upgradeType[2] = true;
+            Debug.Log(coinManager.getCoinsCount());
             return true;
         }
         return false;
+    }
+
+    public bool[] getUpgradeArray(string upgradeName){
+        switch(upgradeName){
+            case "launchers":
+                return launchers;
+                break;
+            case "solarPanels":
+                return solarPanels;
+                break;
+            case "weightRedistributions":
+                return weightRedistributions;
+                break; 
+            case "fuelEfficiency":
+                return fuelEfficiency;
+                break;
+            case "softwareUpdates":
+                return softwareUpdates;
+                break;
+            case "wealthExpediters":
+                return wealthExpediters;
+                break; 
+            default:
+                return null;
+        }
     }
 
     

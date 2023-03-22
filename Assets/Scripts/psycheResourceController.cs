@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class psycheResourceController : MonoBehaviour
 {
+
+    TransitionLoader transitionLoader;
+
     public float fuel = 50f;
     public float startingFuel;
     public float startingFuelLossSpeed = 2f;
@@ -18,12 +21,20 @@ public class psycheResourceController : MonoBehaviour
     public float waitTime = 1.5f;
     public float timer = 0.0f;
 
-    CoinManager coinManager = new CoinManager();
+    private CoinManager coinManager = new CoinManager();
 
     // Start is called before the first frame update
     void Start()
     {
         startingFuel = fuel;
+
+        transitionLoader = gameObject.GetComponent<TransitionLoader>();
+
+        if(transitionLoader == null)
+        {
+            transitionLoader = gameObject.AddComponent<TransitionLoader>();
+        }
+
     }
 
     // Update is called once per frame
@@ -65,7 +76,10 @@ public class psycheResourceController : MonoBehaviour
         coinManager.addCoins(100);
         int x = coinManager.getCoinsCount();
         Debug.Log(x);
-        
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "MainMenuScene");
+
+        transitionLoader.goToShop();
+
+       // UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "ShopScene");
     }
+
 }
