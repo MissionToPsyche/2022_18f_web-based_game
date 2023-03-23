@@ -73,7 +73,7 @@ public class VisualizeUpgrades : MonoBehaviour
                 square3 = WeightRedistributionUpgrade3;
                 upgradeBoolArray = upgradeManager.getUpgradeArray(upgradeName);
                 break; 
-            case "navigationControls":
+            case "fuelEfficiency":
                 square1 = FuelEfficiencyUpgrade1;
                 square2 = FuelEfficiencyUpgrade2;
                 square3 = FuelEfficiencyUpgrade3;

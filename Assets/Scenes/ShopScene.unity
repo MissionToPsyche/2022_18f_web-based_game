@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 282348181}
         m_TargetAssemblyTypeName: VisualizeUpgrades, Assembly-CSharp
-        m_MethodName: upgradeFuelEfficiency
+        m_MethodName: upgradeNavigationControls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1062,37 +1062,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinCountText: {fileID: 1918673655}
---- !u!114 &282348181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282348177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722120dbc4f0e834eb404ea17eff8827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinCountText: {fileID: 1918673655}
-  launcherUpgrade1: {fileID: 1148853392}
-  launcherUpgrade2: {fileID: 1085180428}
-  launcherUpgrade3: {fileID: 897042796}
-  SolarPanelUpgrade1: {fileID: 2082753715}
-  SolarPanelUpgrade2: {fileID: 870770391}
-  SolarPanelUpgrade3: {fileID: 2141278631}
-  WeightRedistributionUpgrade1: {fileID: 794609867}
-  WeightRedistributionUpgrade2: {fileID: 1757735225}
-  WeightRedistributionUpgrade3: {fileID: 2086017959}
-  FuelEfficiencyUpgrade1: {fileID: 0}
-  FuelEfficiencyUpgrade2: {fileID: 0}
-  FuelEfficiencyUpgrade3: {fileID: 0}
-  SoftwareUpdateUpgrade1: {fileID: 1344278950}
-  SoftwareUpdateUpgrade2: {fileID: 1518582681}
-  SoftwareUpdateUpgrade3: {fileID: 2090664815}
-  WealthExpediterUpgrade1: {fileID: 1766367839}
-  WealthExpediterUpgrade2: {fileID: 2066620663}
-  WealthExpediterUpgrade3: {fileID: 474435578}
 --- !u!1 &282439439
 GameObject:
   m_ObjectHideFlags: 0
