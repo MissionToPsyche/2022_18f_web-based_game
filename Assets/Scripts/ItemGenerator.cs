@@ -15,12 +15,16 @@ public class ItemGenerator : MonoBehaviour
     void Start()
     {
         psycheCraft = GameObject.Find("/Psyche/PsycheCraft");
+        InvokeRepeating("CoinGenerator", 2.0f, 2f);
+        InvokeRepeating("AstroidGenerator", 2.0f, 1.5f);
+        //AstroidGenerator();
+        //CoinGenerator();
     }
     
     void Update()
     {
-        AstroidGenerator();
-        CoinGenerator();
+        //AstroidGenerator();
+        //CoinGenerator();
     }
 
     private GameObject AstroidGenerator(){
@@ -29,10 +33,11 @@ public class ItemGenerator : MonoBehaviour
         go.GetComponent<SpriteRenderer>().sprite = astroid;
         Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
 
-        tempPos += new Vector3(Random.Range(-20f,20f), 25, 0);
+        tempPos += new Vector3(Random.Range(-20f,20f), 50, 0);
         //tempPos += new Vector3(-25f, 1, 0);
         go.GetComponent<Transform>().position = tempPos;
-        go.GetComponent<Transform>().localScale = new Vector3(.05f,.05f,.05f);
+        go.GetComponent<Transform>().localScale = new Vector3(.1f,.1f,.1f);
+        Destroy(go, 5f);
         return go;
     }
 
@@ -42,10 +47,11 @@ public class ItemGenerator : MonoBehaviour
         go.GetComponent<SpriteRenderer>().sprite = coin;
         Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
 
-        tempPos += new Vector3(Random.Range(-20f,20f), 25, 0);
+        tempPos += new Vector3(Random.Range(-20f,20f), 50, 0);
         //tempPos += new Vector3(-25f, 1, 0);
         go.GetComponent<Transform>().position = tempPos;
-        go.GetComponent<Transform>().localScale = new Vector3(2f,2f,2f);
+        go.GetComponent<Transform>().localScale = new Vector3(3f,3f,3f);
+        Destroy(go, 5f);
         return go;
     }
 }

@@ -34,6 +34,8 @@ public class VisualizeUpgrades : MonoBehaviour
     [SerializeField] private GameObject WealthExpediterUpgrade2;
     [SerializeField] private GameObject WealthExpediterUpgrade3;
 
+    
+
     void Start()
     {
         visualizeUpdates();
@@ -50,9 +52,9 @@ public class VisualizeUpgrades : MonoBehaviour
     }
 
     public void visualizeSingleUpdate(string upgradeName){
-        var square1 = new GameObject();
-        var square2 = new GameObject();
-        var square3 = new GameObject();
+        GameObject square1 = new GameObject();
+        GameObject square2 = new GameObject();
+        GameObject square3 = new GameObject();
         var upgradeBoolArray = new bool[1];
         switch(upgradeName){
             case "launchers":
@@ -110,6 +112,7 @@ public class VisualizeUpgrades : MonoBehaviour
 
     public void upgradeLaunchers(){
         bool success = upgradeManager.buyUpgrade("launchers");
+        //Debug.Log(success);
         if(success){
             visualizeUpdates();
         }
@@ -117,6 +120,7 @@ public class VisualizeUpgrades : MonoBehaviour
 
     public void upgradeSolarPanels(){
         bool success = upgradeManager.buyUpgrade("solarPanels");
+        //Debug.Log(success);
         if(success){
             visualizeUpdates();
         }
@@ -124,6 +128,7 @@ public class VisualizeUpgrades : MonoBehaviour
 
     public void upgradeWeightRedistributions(){
         bool success = upgradeManager.buyUpgrade("weightRedistributions");
+        //Debug.Log(success);
         if(success){
             visualizeUpdates();
         }
@@ -131,6 +136,7 @@ public class VisualizeUpgrades : MonoBehaviour
 
     public void upgradeFuelEfficiency(){
         bool success = upgradeManager.buyUpgrade("fuelEfficiency");
+        //Debug.Log(success);
         if(success){
             visualizeUpdates();
         }
@@ -138,6 +144,7 @@ public class VisualizeUpgrades : MonoBehaviour
 
     public void upgadeSoftwareUpdates(){
         bool success = upgradeManager.buyUpgrade("softwareUpdates");
+        //Debug.Log(success);
         if(success){
             visualizeUpdates();
         }
@@ -145,6 +152,7 @@ public class VisualizeUpgrades : MonoBehaviour
 
     public void upgradeWealthExpediters(){
         bool success = upgradeManager.buyUpgrade("wealthExpediters");
+        //Debug.Log(success);
         if(success){
             visualizeUpdates();
         }

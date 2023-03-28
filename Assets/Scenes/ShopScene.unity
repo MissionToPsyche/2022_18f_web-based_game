@@ -1084,9 +1084,9 @@ MonoBehaviour:
   WeightRedistributionUpgrade1: {fileID: 794609867}
   WeightRedistributionUpgrade2: {fileID: 1757735225}
   WeightRedistributionUpgrade3: {fileID: 2086017959}
-  FuelEfficiencyUpgrade1: {fileID: 0}
-  FuelEfficiencyUpgrade2: {fileID: 0}
-  FuelEfficiencyUpgrade3: {fileID: 0}
+  FuelEfficiencyUpgrade1: {fileID: 282439439}
+  FuelEfficiencyUpgrade2: {fileID: 169031873}
+  FuelEfficiencyUpgrade3: {fileID: 1866140771}
   SoftwareUpdateUpgrade1: {fileID: 1344278950}
   SoftwareUpdateUpgrade2: {fileID: 1518582681}
   SoftwareUpdateUpgrade3: {fileID: 2090664815}
