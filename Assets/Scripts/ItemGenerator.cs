@@ -29,7 +29,13 @@ public class ItemGenerator : MonoBehaviour
 
     private GameObject AstroidGenerator(){
         GameObject go = new GameObject();
+        go.name = "Astroid";
         go.AddComponent<SpriteRenderer>();
+        go.AddComponent<BoxCollider2D>();
+        go.GetComponent<BoxCollider2D>().size = new Vector3(25f, 19f, 1f);
+        //go.GetComponent<BoxCollider2D>().size = new Vector3(1f, 1f, 1f);
+        go.GetComponent<BoxCollider2D>().isTrigger = true;
+
         go.GetComponent<SpriteRenderer>().sprite = astroid;
         Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
 
@@ -37,13 +43,18 @@ public class ItemGenerator : MonoBehaviour
         //tempPos += new Vector3(-25f, 1, 0);
         go.GetComponent<Transform>().position = tempPos;
         go.GetComponent<Transform>().localScale = new Vector3(.1f,.1f,.1f);
-        Destroy(go, 5f);
+        Destroy(go, 30f);
         return go;
     }
 
     private GameObject CoinGenerator(){
         GameObject go = new GameObject();
+        go.name = "Coin";
         go.AddComponent<SpriteRenderer>();
+        go.AddComponent<BoxCollider2D>();
+        go.GetComponent<BoxCollider2D>().isTrigger = true;
+        go.GetComponent<BoxCollider2D>().size = new Vector3(.65f, .65f, 1f);
+        //go.GetComponent<BoxCollider2D>().size = new Vector3(1f, 1f, 1f);
         go.GetComponent<SpriteRenderer>().sprite = coin;
         Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
 
@@ -51,7 +62,14 @@ public class ItemGenerator : MonoBehaviour
         //tempPos += new Vector3(-25f, 1, 0);
         go.GetComponent<Transform>().position = tempPos;
         go.GetComponent<Transform>().localScale = new Vector3(3f,3f,3f);
-        Destroy(go, 5f);
+        Destroy(go, 15f);
         return go;
     }
+
+/*  doesnt work
+    private void OnCollisionEnter2D(Collision2D collision){
+        Debug.Log("Item Gen:" + collision.gameObject.name);
+        Destroy(this.gameObject);
+    }*/
+
 }

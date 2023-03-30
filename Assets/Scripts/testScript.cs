@@ -32,6 +32,9 @@ using UnityEngine.UI;
     private float yStart;
     [SerializeField] private TMP_Text launch_text;
 
+    private int coinsCollected;
+    private int coinsValue;
+
     GameManager gameManager;
     public void Awake()
     {
@@ -49,6 +52,9 @@ using UnityEngine.UI;
         launch_text.alpha = 0f;
         fallingBoostThreshold = -3f;
         fallingRunEndThreshold = -18.0f;
+
+        coinsCollected = 0;
+        coinsValue = 5;
 
     }
 
@@ -72,7 +78,7 @@ using UnityEngine.UI;
         if(body.velocity.y < fallingBoostThreshold)
         {
             isFalling_Boost = true;
-            Debug.Log("triggered falling_boost");
+            //Debug.Log("triggered falling_boost");
 
         }
         else
@@ -82,7 +88,7 @@ using UnityEngine.UI;
 
         if(body.velocity.y < fallingRunEndThreshold)
         {
-            Debug.Log("triggered falling_end");
+            //Debug.Log("triggered falling_end");
             isFalling_Boost = false;
             isFalling_End = true;
             
@@ -150,10 +156,33 @@ using UnityEngine.UI;
 
     public void Launch() // initial launch, burst of upward momentum
     {
-        Debug.Log("got to launch");
+        //Debug.Log("got to launch");
         body.velocity = new Vector2(body.velocity.x, gameManager.launch_speed);
-        Debug.Log("completed the launch");
+        //Debug.Log("completed the launch");
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        string name = collision.gameObject.name;
+        Debug.Log(collision.gameObject.name);
+        if(name == "Ground"){
+            // ground collision
+        }
+        else if(name == "Coin"){   
+            Destroy(collision.gameObject, .05f);
+            coinsCollected += coinsValue;
+        }
+        else if(name == "Astroid"){
+            Destroy(collision.gameObject, .05f);
+        }
+    }
+
+
+    /*
+    private void OnTriggerExit2D(Collider2D collision){
+        Debug.Log(collision.gameObject.name);
+        //Destroy(collision.gameObject);
+    }
+    */
 
 }
