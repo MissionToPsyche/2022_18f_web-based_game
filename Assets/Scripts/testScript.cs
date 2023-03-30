@@ -16,6 +16,8 @@ using UnityEngine.UI;
     // Vector3 position;
     // Quaternion rotation;
 
+    [SerializeField] private AudioSource jumpSoundEffect;
+
     // private bool run_start = false;
     private bool isBoosting = false;
     private bool isGrounded = false;
@@ -95,6 +97,11 @@ using UnityEngine.UI;
         if (!isGrounded)
         {
             isBoosting = Input.GetKey(KeyCode.Space);
+        }
+
+        if(Input.GetKey(KeyCode.Space))
+        {
+            jumpSoundEffect.Play();
         }
 
     }
