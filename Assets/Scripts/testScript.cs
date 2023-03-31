@@ -16,7 +16,9 @@ using UnityEngine.UI;
     // Vector3 position;
     // Quaternion rotation;
 
+    private bool isJumpSoundPlaying = false;
     [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource leftmoveeffect;
 
     // private bool run_start = false;
     private bool isBoosting = false;
@@ -105,9 +107,21 @@ using UnityEngine.UI;
             isBoosting = Input.GetKey(KeyCode.Space);
         }
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && !isJumpSoundPlaying)
         {
             jumpSoundEffect.Play();
+            isJumpSoundPlaying = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (!jumpSoundEffect.isPlaying)
+            {
+                jumpSoundEffect.Play();
+            }
+            else
+            {
+                leftmoveeffect.Stop();
+            }      
         }
 
     }
@@ -139,7 +153,25 @@ using UnityEngine.UI;
             {
                 body.velocity = new Vector2(moveInput * gameManager.move_speed, body.velocity.y);
             }
-  
+
+            if (!isGrounded)
+            {
+                body.velocity = new Vector2(moveInput * gameManager.move_speed, body.velocity.y);
+                if (moveInput != 0) // Checking whether the rocket is moving right/left
+                {
+                    if (!leftmoveeffect.isPlaying)
+                    {
+                        leftmoveeffect.Play();
+                    }
+                }
+                else
+                {
+                    if (leftmoveeffect.isPlaying)
+                    {
+                        leftmoveeffect.Stop();
+                    }
+                }
+            }
     }
 
    IEnumerator waitForKeyPress()
