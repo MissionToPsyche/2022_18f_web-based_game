@@ -20,6 +20,9 @@ using UnityEngine.UI;
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource leftmoveeffect;
 
+    [SerializeField] private TMPro.TextMeshProUGUI distanceText;
+    [SerializeField] private TMPro.TextMeshProUGUI speedText;
+
     // private bool run_start = false;
     private bool isBoosting = false;
     private bool isGrounded = false;
@@ -37,9 +40,16 @@ using UnityEngine.UI;
     private int coinsCollected;
     private int coinsValue;
 
+    private float distanceTraveled;
+    private int obstaclesCrashedCount;
+    private 
+
     GameManager gameManager;
     public void Awake()
     {
+        // DataTransferStatic is a static class for transfering data from game scene to result scene
+        DataTransferStatic.resetData();
+
         // set necessary values
         pos = GetComponent<Transform>();
         body = GetComponent<Rigidbody2D>();
@@ -55,6 +65,9 @@ using UnityEngine.UI;
         fallingBoostThreshold = -3f;
         fallingRunEndThreshold = -18.0f;
 
+        distanceTraveled = 0;
+        obstaclesCrashedCount = 0;
+
         coinsCollected = 0;
         coinsValue = 5;
 
@@ -62,6 +75,16 @@ using UnityEngine.UI;
 
     private void Update()
     {
+        distanceText.text = "Altitude: " + body.position.y;
+        speedText.text = "Speed: " + body.velocity.y;
+
+        DataTransferStatic.setDistanceTraveled(distanceTraveled);
+        DataTransferStatic.setCoinsCollected(coinsCollected);
+        //DataTransferStatic.setFlightDuration()
+
+        if(body.position.y > distanceTraveled){
+            distanceTraveled = body.position.y;
+        }
 
         if (pos.position.y > 170)
         {
@@ -95,7 +118,6 @@ using UnityEngine.UI;
             isFalling_End = true;
             
         }
-
         else
         {
             isFalling_End = false;
@@ -201,11 +223,12 @@ using UnityEngine.UI;
             // ground collision
         }
         else if(name == "Coin"){   
-            Destroy(collision.gameObject, .05f);
+            Destroy(collision.gameObject, .02f);
             coinsCollected += coinsValue;
         }
         else if(name == "Astroid"){
-            Destroy(collision.gameObject, .05f);
+            Destroy(collision.gameObject, .02f);
+            obstaclesCrashedCount += 1;
         }
     }
 

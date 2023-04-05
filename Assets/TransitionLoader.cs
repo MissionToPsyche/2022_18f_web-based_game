@@ -27,6 +27,6 @@ public class TransitionLoader : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1);
 
-        SceneManager.LoadScene("ShopScene");
+        SceneManager.LoadScene("ResultScene");
     }
 }

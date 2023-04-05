@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         
         atShop = true;
         runStart = true;
-        coinManager.addCoins(100);
+        //coinManager.addCoins(100);
         PauseGame();
         loader.goToShop();
         
