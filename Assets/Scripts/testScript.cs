@@ -22,6 +22,7 @@ using UnityEngine.UI;
 
     [SerializeField] private TMPro.TextMeshProUGUI distanceText;
     [SerializeField] private TMPro.TextMeshProUGUI speedText;
+    [SerializeField] private TMPro.TextMeshProUGUI coinText;
 
     // private bool run_start = false;
     private bool isBoosting = false;
@@ -42,7 +43,7 @@ using UnityEngine.UI;
 
     private float distanceTraveled;
     private int obstaclesCrashedCount;
-    private 
+    private float flightDuration;
 
     GameManager gameManager;
     public void Awake()
@@ -67,6 +68,7 @@ using UnityEngine.UI;
 
         distanceTraveled = 0;
         obstaclesCrashedCount = 0;
+        flightDuration = 0f;
 
         coinsCollected = 0;
         coinsValue = 5;
@@ -75,11 +77,13 @@ using UnityEngine.UI;
 
     private void Update()
     {
-        distanceText.text = "Altitude: " + body.position.y;
-        speedText.text = "Speed: " + body.velocity.y;
+        distanceText.text = "Altitude: " + body.position.y.ToString("0.00");
+        speedText.text = "Speed: " + body.velocity.y.ToString("0.00");
+        coinText.text = "Coins Collected: " + coinsCollected;
 
         DataTransferStatic.setDistanceTraveled(distanceTraveled);
         DataTransferStatic.setCoinsCollected(coinsCollected);
+        DataTransferStatic.setFlightDuration(flightDuration);
         //DataTransferStatic.setFlightDuration()
 
         if(body.position.y > distanceTraveled){
@@ -97,6 +101,7 @@ using UnityEngine.UI;
         }
         else
         {
+            flightDuration += Time.deltaTime;
             isGrounded = false;
         }
 
