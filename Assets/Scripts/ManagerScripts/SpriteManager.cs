@@ -44,7 +44,7 @@ public class SpriteManager : MonoBehaviour
     }
 
     //grab correct sprite method for fuel
-    public Sprite getBudgetSprite(bool[] fuelArray){
+    public Sprite getFuelSprite(bool[] fuelArray){
         if (fuelArray[0]){
             return fuelSpriteArray[0];
         }
@@ -60,7 +60,7 @@ public class SpriteManager : MonoBehaviour
     }
 
     //grab correct sprite method for solar
-    public Sprite getBudgetSprite(bool[] solArray){
+    public Sprite getSolarSprite(bool[] solArray){
         if (solArray[0]){
             return solarSpriteArray[0];
         }
