@@ -24,6 +24,6 @@ public class ResultSceneScript : MonoBehaviour
 
     public void transitionToShop(){
         Debug.Log("transitioning to shop");
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "ShopScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "UpdatedShopScene");
     }
 }

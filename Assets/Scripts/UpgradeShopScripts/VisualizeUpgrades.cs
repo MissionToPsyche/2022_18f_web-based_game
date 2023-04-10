@@ -38,6 +38,29 @@ public class VisualizeUpgrades : MonoBehaviour
 
     void Start()
     {
+        launcherUpgrade1.GetComponent<Image>().enabled = false;
+        launcherUpgrade2.GetComponent<Image>().enabled = false;
+        launcherUpgrade3.GetComponent<Image>().enabled = false;
+
+        SolarPanelUpgrade1.GetComponent<Image>().enabled = false;
+        SolarPanelUpgrade2.GetComponent<Image>().enabled = false;
+        SolarPanelUpgrade3.GetComponent<Image>().enabled = false;
+
+        WeightRedistributionUpgrade1.GetComponent<Image>().enabled = false;
+        WeightRedistributionUpgrade2.GetComponent<Image>().enabled = false;
+        WeightRedistributionUpgrade3.GetComponent<Image>().enabled = false;
+
+        FuelEfficiencyUpgrade1.GetComponent<Image>().enabled = false;
+        FuelEfficiencyUpgrade2.GetComponent<Image>().enabled = false;
+        FuelEfficiencyUpgrade3.GetComponent<Image>().enabled = false;
+
+        SoftwareUpdateUpgrade1.GetComponent<Image>().enabled = false;
+        SoftwareUpdateUpgrade2.GetComponent<Image>().enabled = false;
+        SoftwareUpdateUpgrade3.GetComponent<Image>().enabled = false;
+
+        WealthExpediterUpgrade1.GetComponent<Image>().enabled = false;
+        WealthExpediterUpgrade2.GetComponent<Image>().enabled = false;
+        WealthExpediterUpgrade3.GetComponent<Image>().enabled = false;
         visualizeUpdates();
     }
 
@@ -97,16 +120,16 @@ public class VisualizeUpgrades : MonoBehaviour
                 return;
         }
         if(upgradeBoolArray[0] == true){
-            var spriteRenderer = square1.GetComponent<SpriteRenderer>();
-            spriteRenderer.color = Color.green;
+            var spriteRenderer = square1.GetComponent<Image>();
+            spriteRenderer.enabled = true;
         }
         if(upgradeBoolArray[1] == true){
-            var spriteRenderer = square2.GetComponent<SpriteRenderer>();
-            spriteRenderer.color = Color.green;
+            var spriteRenderer = square2.GetComponent<Image>();
+            spriteRenderer.enabled = true;
         }
         if(upgradeBoolArray[2   ] == true){
-            var spriteRenderer = square3.GetComponent<SpriteRenderer>();
-            spriteRenderer.color = Color.green;
+            var spriteRenderer = square3.GetComponent<Image>();
+            spriteRenderer.enabled = true;
         }
     }
 
@@ -114,7 +137,8 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("launchers");
         //Debug.Log(success);
         if(success){
-            visualizeUpdates();
+            updateCoinText();
+            visualizeSingleUpdate("launchers");
         }
     }
 
@@ -122,7 +146,8 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("solarPanels");
         //Debug.Log(success);
         if(success){
-            visualizeUpdates();
+            updateCoinText();
+            visualizeSingleUpdate("solarPanels");
         }
     }
 
@@ -130,7 +155,8 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("weightRedistributions");
         //Debug.Log(success);
         if(success){
-            visualizeUpdates();
+            updateCoinText();
+            visualizeSingleUpdate("weightRedistributions");
         }
     }
 
@@ -138,7 +164,8 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("fuelEfficiency");
         //Debug.Log(success);
         if(success){
-            visualizeUpdates();
+            updateCoinText();
+            visualizeSingleUpdate("fuelEfficiency");
         }
     }
 
@@ -146,7 +173,8 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("softwareUpdates");
         //Debug.Log(success);
         if(success){
-            visualizeUpdates();
+            updateCoinText();
+            visualizeSingleUpdate("softwareUpdates");
         }
     }
 
@@ -154,7 +182,8 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("wealthExpediters");
         //Debug.Log(success);
         if(success){
-            visualizeUpdates();
+            updateCoinText();
+            visualizeSingleUpdate("wealthExpediters");
         }
     }
 
