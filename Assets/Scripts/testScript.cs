@@ -18,6 +18,8 @@ using UnityEngine.UI;
     private bool isJumpSoundPlaying = false;
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource leftmoveeffect;
+    [SerializeField] private AudioSource coinEffect;
+    [SerializeField] private AudioSource boomEffect;
 
     [SerializeField] private TMPro.TextMeshProUGUI distanceText;
     [SerializeField] private TMPro.TextMeshProUGUI speedText;
@@ -185,17 +187,17 @@ using UnityEngine.UI;
                 body.velocity = new Vector2(moveInput * gameManager.move_speed, body.velocity.y);
                 if (moveInput != 0) // Checking whether the rocket is moving right/left
                 {
-                    if (!leftmoveeffect.isPlaying)
-                    {
-                        leftmoveeffect.Play();
-                    }
+                    // if (!leftmoveeffect.isPlaying)
+                    // {
+                    //    leftmoveeffect.Play();
+                    // }
                 }
                 else
                 {
-                    if (leftmoveeffect.isPlaying)
-                    {
-                        leftmoveeffect.Stop();
-                    }
+                    // if (leftmoveeffect.isPlaying)
+                    // {
+                    //     leftmoveeffect.Stop();
+                    // }
                 }
             }
     }
@@ -226,11 +228,13 @@ using UnityEngine.UI;
         if(name == "Ground"){
             // ground collision
         }
-        else if(name == "Coin"){   
+        else if(name == "Coin"){
+            coinEffect.Play();
             Destroy(collision.gameObject, .02f);
             coinsCollected += coinsValue;
         }
         else if(name == "Astroid"){
+            boomEffect.Play();
             Destroy(collision.gameObject, .02f);
             obstaclesCrashedCount += 1;
         }
