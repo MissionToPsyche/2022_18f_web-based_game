@@ -526,7 +526,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357722039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -19.9979}
+  m_LocalPosition: {x: 0, y: 0, z: -19.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -536,7 +536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.9196, y: 167.4849}
+  m_AnchoredPosition: {x: 15.16, y: 167.41}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &357722046
@@ -725,7 +725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.9196, y: 167.4849, z: -19.9979}
+  m_LocalPosition: {x: 15.16, y: 167.41, z: -19.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1380,6 +1380,7 @@ GameObject:
   - component: {fileID: 1279323080}
   - component: {fileID: 1279323081}
   - component: {fileID: 1279323082}
+  - component: {fileID: 1279323083}
   m_Layer: 0
   m_Name: PsycheCraft
   m_TagString: Untagged
@@ -1428,7 +1429,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 2d537ebd615d088439feba4f8a2e2e43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1cc104ebc96d547b7ba7262d471ffa3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1447,8 +1448,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279323072}
   m_LocalRotation: {x: -0.001983406, y: -0.001983407, z: 0.7071041, w: 0.7071041}
-  m_LocalPosition: {x: -3.6604, y: -1.7151, z: 0.0021}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalPosition: {x: -2.42, y: -1.79, z: 0.01}
+  m_LocalScale: {x: 5.7261896, y: 4.8197775, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1756541456}
@@ -1492,7 +1493,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.34, y: 12.5}
+    oldSize: {x: 0.37, y: 1.03}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1905,6 +1906,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1279323083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279323072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c7885a04fef4180a215952f21189d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craft: {fileID: 21300000, guid: 1cc104ebc96d547b7ba7262d471ffa3c, type: 3}
+  budgetSpriteArray: []
+  fuelSpriteArray: []
+  solarSpriteArray:
+  - {fileID: 21300000, guid: 0ba7625cd2c7b4aabab738a1edd28494, type: 3}
+  - {fileID: 21300000, guid: 0589a534e57fb48b1b01b6c2cbd7c99c, type: 3}
+  - {fileID: 21300000, guid: b496a85744b8e4d9695108fa438fd734, type: 3}
+  solarNoBoostArray:
+  - {fileID: 21300000, guid: 657e58f738e4f455e95cbef6d494ef04, type: 3}
+  - {fileID: 21300000, guid: 27167a4e9230c43e5b755486c000f364, type: 3}
+  - {fileID: 21300000, guid: 1d60c420efe4b4f629d58833d7436100, type: 3}
+  finalShip: {fileID: 0}
+  finalBoostedShip: {fileID: 0}
+  spriteRenderer: {fileID: 1279323073}
 --- !u!1 &1429456312
 GameObject:
   m_ObjectHideFlags: 0
