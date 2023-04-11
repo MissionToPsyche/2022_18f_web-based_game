@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class SpriteManager : MonoBehaviour
 {
+    public Sprite craft;
+
     public Sprite[] budgetSpriteArray;
     public Sprite[] fuelSpriteArray;
     public Sprite[] solarSpriteArray;
+    public Sprite[] solarNoBoostArray;
 
-    public SpriteRenderer spriteRenderer;
+    public Sprite finalShip = null;
+    public Sprite finalBoostedShip = null;
+
+    public SpriteRenderer spriteRenderer = null;
 
     // Start is called before the first frame update
     void Start()
     {
+        MergeBoostedSprites();
+        MergeSprites();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -20,11 +28,112 @@ public class SpriteManager : MonoBehaviour
     void Update()
     {
          if(Input.GetKey("space")){
-            spriteRenderer.sprite = solarSpriteArray[2];
+            spriteRenderer.sprite = finalBoostedShip;
         }
         else{
-            spriteRenderer.sprite = solarSpriteArray[0];
+            spriteRenderer.sprite = finalShip;
         }
+    }
+
+    public void MergeBoostedSprites(){
+
+        Resources.UnloadUnusedAssets();
+
+        Sprite[] spritesToMerge = {solarSpriteArray[2],craft};
+
+        int solarWidth = (int)solarSpriteArray[2].rect.width;
+        int craftWidth = (int)craft.rect.width;
+
+        var newTexture = new Texture2D(solarWidth+craftWidth, 103);
+
+        for(int x = 0; x < newTexture.width; x++){
+            for(int y = 0; y < newTexture.height; y++){
+                newTexture.SetPixel(x,y, new Color(1,1,1,0));
+            }
+        }
+
+        int xOffset = 0;
+
+        for(int i = 0; i < spritesToMerge.Length; i++){
+            /*
+            for(int x = 0; x < spritesToMerge[i].texture.width; x++){
+                for(int y = 0; y < spritesToMerge[i].texture.width; y++){
+
+                    var colorA = spritesToMerge[i].texture.GetPixel(x,y).a;
+                    Color color = new Color(1,1,1,0);
+
+                    if(colorA == 0){
+                        color = newTexture.GetPixel(x,y);
+                    }
+                    else{
+                        color = spritesToMerge[i].texture.GetPixel(x, y);
+                    }
+
+                    newTexture.SetPixel(x,y,color);
+
+                }
+            }
+            */ 
+            
+            for(int x = 0; x < spritesToMerge[i].texture.width; x++){
+                for(int y = 0; y < spritesToMerge[i].texture.height; y++){
+                    Color color = spritesToMerge[i].texture.GetPixel(x,y);
+                    newTexture.SetPixel(x + xOffset, y, color);
+                }
+                
+                if(x == spritesToMerge[i].texture.width - 1){
+                    xOffset += x; 
+                }
+            }
+        }
+
+        newTexture.Apply();
+
+        finalBoostedShip = Sprite.Create(newTexture, new Rect(0, 0, newTexture.width, newTexture.height), new Vector2(0.5f, 0.5f));
+        finalBoostedShip.name = "finalBMergedShip";
+        
+        spriteRenderer.sprite = finalBoostedShip;
+    }
+
+    public void MergeSprites(){
+
+        Resources.UnloadUnusedAssets();
+
+        Sprite[] spritesToMerge = {solarNoBoostArray[2],craft};
+
+        int solarWidth = (int)solarSpriteArray[2].rect.width;
+        int craftWidth = (int)craft.rect.width;
+
+        var newTexture = new Texture2D(solarWidth+craftWidth, 103);
+
+        for(int x = 0; x < newTexture.width; x++){
+            for(int y = 0; y < newTexture.height; y++){
+                newTexture.SetPixel(x,y, new Color(1,1,1,0));
+            }
+        }
+
+        int xOffset = 0;
+
+        for(int i = 0; i < spritesToMerge.Length; i++){
+            for(int x = 0; x < spritesToMerge[i].texture.width; x++){
+                for(int y = 0; y < spritesToMerge[i].texture.height; y++){
+                    Color color = spritesToMerge[i].texture.GetPixel(x,y);
+                    newTexture.SetPixel(x + xOffset, y, color);
+                }
+                
+                if(x == spritesToMerge[i].texture.width - 1){
+                    xOffset += x; 
+                }
+            }
+        }
+
+        newTexture.Apply();
+
+        finalShip = Sprite.Create(newTexture, new Rect(0, 0, newTexture.width, newTexture.height), new Vector2(0.5f, 0.5f));
+        finalShip.name = "finalMergedShip";
+        
+        spriteRenderer.sprite = finalShip;
+
     }
 
     //grab correct sprite method for budget
