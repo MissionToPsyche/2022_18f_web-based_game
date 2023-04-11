@@ -10,6 +10,8 @@ public class VisualizeUpgrades : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private TMPro.TextMeshProUGUI coinCountText;
 
+    [SerializeField] private AudioSource upgradeEffect;
+
     [SerializeField] private GameObject launcherUpgrade1;
     [SerializeField] private GameObject launcherUpgrade2;
     [SerializeField] private GameObject launcherUpgrade3;
@@ -137,6 +139,7 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("launchers");
         //Debug.Log(success);
         if(success){
+            upgradeEffect.Play();
             updateCoinText();
             visualizeSingleUpdate("launchers");
         }
@@ -146,6 +149,7 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("solarPanels");
         //Debug.Log(success);
         if(success){
+            upgradeEffect.Play();
             updateCoinText();
             visualizeSingleUpdate("solarPanels");
         }
@@ -155,6 +159,7 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("weightRedistributions");
         //Debug.Log(success);
         if(success){
+            upgradeEffect.Play();
             updateCoinText();
             visualizeSingleUpdate("weightRedistributions");
         }
@@ -164,6 +169,7 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("fuelEfficiency");
         //Debug.Log(success);
         if(success){
+            upgradeEffect.Play();
             updateCoinText();
             visualizeSingleUpdate("fuelEfficiency");
         }
@@ -173,6 +179,7 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("softwareUpdates");
         //Debug.Log(success);
         if(success){
+            upgradeEffect.Play();
             updateCoinText();
             visualizeSingleUpdate("softwareUpdates");
         }
@@ -182,6 +189,7 @@ public class VisualizeUpgrades : MonoBehaviour
         bool success = upgradeManager.buyUpgrade("wealthExpediters");
         //Debug.Log(success);
         if(success){
+            upgradeEffect.Play();
             updateCoinText();
             visualizeSingleUpdate("wealthExpediters");
         }
