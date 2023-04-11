@@ -18,6 +18,7 @@ using UnityEngine.UI;
     private bool isJumpSoundPlaying = false;
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource leftmoveeffect;
+    [SerializeField] private AudioSource coinEffect;
 
     [SerializeField] private TMPro.TextMeshProUGUI distanceText;
     [SerializeField] private TMPro.TextMeshProUGUI speedText;
@@ -226,7 +227,8 @@ using UnityEngine.UI;
         if(name == "Ground"){
             // ground collision
         }
-        else if(name == "Coin"){   
+        else if(name == "Coin"){
+            coinEffect.Play();
             Destroy(collision.gameObject, .02f);
             coinsCollected += coinsValue;
         }
