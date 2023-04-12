@@ -39,10 +39,36 @@ public class SpriteManager : MonoBehaviour
 
         Resources.UnloadUnusedAssets();
 
+        Sprite mergedShip = null;
+
         Sprite[] spritesToMerge = {solarSpriteArray[2],craft};
+        Sprite[] spritesToShip = {craft, budgetSpriteArray[2], fuelSpriteArray[2]};
+
+        var newCraft = new Texture2D(37,103);
+
+        for(int x = 0; x < newCraft.width; x++){
+            for(int y = 0; y < newCraft.height; y++){
+                newCraft.SetPixel(x,y, new Color(1,1,1,0));
+            }
+        }
+
+        for(int i = 0; i < spritesToShip.Length; i++){
+            for(int x = 0; x < spritesToShip[i].texture.width; x++){
+                for(int y = 0; y < spritesToShip[i].texture.height; y++){
+                    var color = spritesToShip[i].texture.GetPixel(x, y).a == 0 ?
+                                    newCraft.GetPixel(x,y) :
+                                    spritesToShip[i].texture.GetPixel(x,y);
+                    newCraft.SetPixel(x,y, color);
+                }
+            }
+        }
+        newCraft.Apply();
+        mergedShip = Sprite.Create(newCraft, new Rect(0, 0, newCraft.width, newCraft.height), new Vector2(0.5f, 0.5f));
+
+        spritesToMerge[1] = mergedShip;
 
         int solarWidth = (int)solarSpriteArray[2].rect.width;
-        int craftWidth = (int)craft.rect.width;
+        int craftWidth = (int)newCraft.width;
 
         var newTexture = new Texture2D(solarWidth+craftWidth, 103);
 
@@ -55,25 +81,6 @@ public class SpriteManager : MonoBehaviour
         int xOffset = 0;
 
         for(int i = 0; i < spritesToMerge.Length; i++){
-            /*
-            for(int x = 0; x < spritesToMerge[i].texture.width; x++){
-                for(int y = 0; y < spritesToMerge[i].texture.width; y++){
-
-                    var colorA = spritesToMerge[i].texture.GetPixel(x,y).a;
-                    Color color = new Color(1,1,1,0);
-
-                    if(colorA == 0){
-                        color = newTexture.GetPixel(x,y);
-                    }
-                    else{
-                        color = spritesToMerge[i].texture.GetPixel(x, y);
-                    }
-
-                    newTexture.SetPixel(x,y,color);
-
-                }
-            }
-            */ 
             
             for(int x = 0; x < spritesToMerge[i].texture.width; x++){
                 for(int y = 0; y < spritesToMerge[i].texture.height; y++){
@@ -99,13 +106,40 @@ public class SpriteManager : MonoBehaviour
 
         Resources.UnloadUnusedAssets();
 
+        Sprite mergedShip = null;
+
         Sprite[] spritesToMerge = {solarNoBoostArray[2],craft};
 
+        Sprite[] spritesToShip = {craft, budgetSpriteArray[2], fuelSpriteArray[2]};
+
+        var newCraft = new Texture2D(37,103);
+
+        for(int x = 0; x < newCraft.width; x++){
+            for(int y = 0; y < newCraft.height; y++){
+                newCraft.SetPixel(x,y, new Color(1,1,1,0));
+            }
+        }
+
+        for(int i = 0; i < spritesToShip.Length; i++){
+            for(int x = 0; x < spritesToShip[i].texture.width; x++){
+                for(int y = 0; y < spritesToShip[i].texture.height; y++){
+                    var color = spritesToShip[i].texture.GetPixel(x, y).a == 0 ?
+                                    newCraft.GetPixel(x,y) :
+                                    spritesToShip[i].texture.GetPixel(x,y);
+                    newCraft.SetPixel(x,y, color);
+                }
+            }
+        }
+        newCraft.Apply();
+        mergedShip = Sprite.Create(newCraft, new Rect(0, 0, newCraft.width, newCraft.height), new Vector2(0.5f, 0.5f));
+
+        spritesToMerge[1] = mergedShip;
+
         int solarWidth = (int)solarSpriteArray[2].rect.width;
-        int craftWidth = (int)craft.rect.width;
+        int craftWidth = (int)newCraft.width;
 
         var newTexture = new Texture2D(solarWidth+craftWidth, 103);
-
+        
         for(int x = 0; x < newTexture.width; x++){
             for(int y = 0; y < newTexture.height; y++){
                 newTexture.SetPixel(x,y, new Color(1,1,1,0));

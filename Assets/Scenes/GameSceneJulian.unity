@@ -1919,8 +1919,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craft: {fileID: 21300000, guid: 1cc104ebc96d547b7ba7262d471ffa3c, type: 3}
-  budgetSpriteArray: []
-  fuelSpriteArray: []
+  budgetSpriteArray:
+  - {fileID: 21300000, guid: 186e77c4e2a334bb5ada3f47d74ea3d0, type: 3}
+  - {fileID: 21300000, guid: 2afbdfd4db7254a819913bf4438d5640, type: 3}
+  - {fileID: 21300000, guid: 7c33da23ddd8a46feb48a02334a3dd23, type: 3}
+  fuelSpriteArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 2adddce598a8e40198e4c2f6ab3ca1fb, type: 3}
   solarSpriteArray:
   - {fileID: 21300000, guid: 0ba7625cd2c7b4aabab738a1edd28494, type: 3}
   - {fileID: 21300000, guid: 0589a534e57fb48b1b01b6c2cbd7c99c, type: 3}
