@@ -6,12 +6,15 @@ public class SpriteManager : MonoBehaviour
 {
     public Sprite craft;
 
+    //array that hass all the sprite upgrades 
     public Sprite[] budgetSpriteArray;
     public Sprite[] fuelSpriteArray;
     public Sprite[] solarSpriteArray;
     public Sprite[] solarNoBoostArray;
 
+    //non-boosted sprite
     public Sprite finalShip = null;
+    //boosted sprite
     public Sprite finalBoostedShip = null;
 
     public SpriteRenderer spriteRenderer = null;
@@ -39,22 +42,29 @@ public class SpriteManager : MonoBehaviour
 
         Resources.UnloadUnusedAssets();
 
+        //creates Sprite variable for the ship texture with all sprites merged together
         Sprite mergedShip = null;
 
-        Sprite[] spritesToMerge = {solarSpriteArray[2],craft};
+        //array to merge both the solar texture and the merged craft texture
+        Sprite[] spritesToMerge = {solarSpriteArray[2],null};
+        //array to merge the craft, budget upgrade sprite, and fuel sprite all ontop of each other
         Sprite[] spritesToShip = {craft, budgetSpriteArray[2], fuelSpriteArray[2]};
 
+        //create new Texture for merged sprites that will be the space craft
         var newCraft = new Texture2D(37,103);
-
+        //set the entire background to transparent
         for(int x = 0; x < newCraft.width; x++){
             for(int y = 0; y < newCraft.height; y++){
                 newCraft.SetPixel(x,y, new Color(1,1,1,0));
             }
         }
 
+        //iterate through all sprite for space craft
         for(int i = 0; i < spritesToShip.Length; i++){
+            //overlap current sprite to texture
             for(int x = 0; x < spritesToShip[i].texture.width; x++){
                 for(int y = 0; y < spritesToShip[i].texture.height; y++){
+                    //if statement for in case current sprite has transparent pixel and needs to be overlayed on a color
                     var color = spritesToShip[i].texture.GetPixel(x, y).a == 0 ?
                                     newCraft.GetPixel(x,y) :
                                     spritesToShip[i].texture.GetPixel(x,y);
@@ -62,16 +72,22 @@ public class SpriteManager : MonoBehaviour
                 }
             }
         }
+        //apply all changes to texture
         newCraft.Apply();
+        //create new sprite for merged ship
         mergedShip = Sprite.Create(newCraft, new Rect(0, 0, newCraft.width, newCraft.height), new Vector2(0.5f, 0.5f));
 
+        //set the second item on sprites to merge to newCraft
         spritesToMerge[1] = mergedShip;
 
+        //get solar upgrade width
         int solarWidth = (int)solarSpriteArray[2].rect.width;
+        //get craft width
         int craftWidth = (int)newCraft.width;
 
+        //create new texture that is the width of both the solar upgrade and newCraft width
         var newTexture = new Texture2D(solarWidth+craftWidth, 103);
-
+        //set the background transparent
         for(int x = 0; x < newTexture.width; x++){
             for(int y = 0; y < newTexture.height; y++){
                 newTexture.SetPixel(x,y, new Color(1,1,1,0));
@@ -80,8 +96,8 @@ public class SpriteManager : MonoBehaviour
 
         int xOffset = 0;
 
+        //go through array and start merging sprites from left to right
         for(int i = 0; i < spritesToMerge.Length; i++){
-            
             for(int x = 0; x < spritesToMerge[i].texture.width; x++){
                 for(int y = 0; y < spritesToMerge[i].texture.height; y++){
                     Color color = spritesToMerge[i].texture.GetPixel(x,y);
