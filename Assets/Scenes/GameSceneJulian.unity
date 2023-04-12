@@ -913,7 +913,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813886729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -102, y: 48438, z: 5}
+  m_LocalPosition: {x: -122, y: 48438, z: 5}
   m_LocalScale: {x: 1000, y: 20000, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1924,8 +1924,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2afbdfd4db7254a819913bf4438d5640, type: 3}
   - {fileID: 21300000, guid: 7c33da23ddd8a46feb48a02334a3dd23, type: 3}
   fuelSpriteArray:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 2bb77450194c34a6d9d307206641e0a0, type: 3}
+  - {fileID: 21300000, guid: a1231f7de8af0436488b9501bd345d43, type: 3}
   - {fileID: 21300000, guid: 2adddce598a8e40198e4c2f6ab3ca1fb, type: 3}
   solarSpriteArray:
   - {fileID: 21300000, guid: 0ba7625cd2c7b4aabab738a1edd28494, type: 3}
@@ -2719,7 +2719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889148794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -101, y: 28527, z: 5}
+  m_LocalPosition: {x: -122, y: 28527, z: 5}
   m_LocalScale: {x: 1000, y: 20000, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -19,12 +19,22 @@ public class SpriteManager : MonoBehaviour
 
     public SpriteRenderer spriteRenderer = null;
 
+    private UpgradeManager upManage = new UpgradeManager();
+
+    private int solarIndex = 0;
+    private int budgetindex = 0;
+    private int fuelIndex = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        modifyUpgradeVisuals();
         MergeBoostedSprites();
         MergeSprites();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+       
     }
 
     // Update is called once per frame
@@ -38,7 +48,7 @@ public class SpriteManager : MonoBehaviour
         }
     }
 
-    public void MergeBoostedSprites(){
+    public void MergeBoostedSprites() {
 
         Resources.UnloadUnusedAssets();
 
@@ -46,9 +56,11 @@ public class SpriteManager : MonoBehaviour
         Sprite mergedShip = null;
 
         //array to merge both the solar texture and the merged craft texture
-        Sprite[] spritesToMerge = {solarSpriteArray[2],null};
+        
+        Sprite[] spritesToMerge = { solarSpriteArray[solarIndex], null };
+        
         //array to merge the craft, budget upgrade sprite, and fuel sprite all ontop of each other
-        Sprite[] spritesToShip = {craft, budgetSpriteArray[2], fuelSpriteArray[2]};
+        Sprite[] spritesToShip = {craft, budgetSpriteArray[budgetindex], fuelSpriteArray[fuelIndex]};
 
         //create new Texture for merged sprites that will be the space craft
         var newCraft = new Texture2D(37,103);
@@ -81,7 +93,7 @@ public class SpriteManager : MonoBehaviour
         spritesToMerge[1] = mergedShip;
 
         //get solar upgrade width
-        int solarWidth = (int)solarSpriteArray[2].rect.width;
+        int solarWidth = (int)solarSpriteArray[solarIndex].rect.width;
         //get craft width
         int craftWidth = (int)newCraft.width;
 
@@ -124,9 +136,9 @@ public class SpriteManager : MonoBehaviour
 
         Sprite mergedShip = null;
 
-        Sprite[] spritesToMerge = {solarNoBoostArray[2],craft};
+        Sprite[] spritesToMerge = {solarNoBoostArray[solarIndex],craft};
 
-        Sprite[] spritesToShip = {craft, budgetSpriteArray[2], fuelSpriteArray[2]};
+        Sprite[] spritesToShip = {craft, budgetSpriteArray[budgetindex], fuelSpriteArray[fuelIndex]};
 
         var newCraft = new Texture2D(37,103);
 
@@ -151,7 +163,7 @@ public class SpriteManager : MonoBehaviour
 
         spritesToMerge[1] = mergedShip;
 
-        int solarWidth = (int)solarSpriteArray[2].rect.width;
+        int solarWidth = (int)solarSpriteArray[solarIndex].rect.width;
         int craftWidth = (int)newCraft.width;
 
         var newTexture = new Texture2D(solarWidth+craftWidth, 103);
@@ -186,15 +198,158 @@ public class SpriteManager : MonoBehaviour
 
     }
 
+
+    public void modifyUpgradeVisuals()
+    {
+       // ModifySingleUpgrade("launchers");
+        ModifySingleUpgrade("solarPanels");
+        ModifySingleUpgrade("fuelEfficiency");
+        ModifySingleUpgrade("wealthExpediters");
+    }
+
+
+    public void ModifySingleUpgrade(string upgradeName)
+    {
+        var upgradeBoolArray = new bool[1];
+        switch (upgradeName)
+        {
+            case "launchers":
+                upgradeBoolArray = upManage.getUpgradeArray(upgradeName);
+                break;
+            case "solarPanels":
+                upgradeBoolArray = upManage.getUpgradeArray(upgradeName);
+                break;
+            case "wealthExpediters":
+                upgradeBoolArray = upManage.getUpgradeArray(upgradeName);
+                break;
+            default:
+                return;
+        }
+
+        getSpriteIndexes(upgradeName, upgradeBoolArray);
+
+    }
+
+    public void getSpriteIndexes(string upgradeNam, bool[] arr)
+    {
+        switch (upgradeNam)
+        {
+            case "launchers":
+                if (arr[0])
+                {
+
+                }
+
+                if (arr[1])
+                {
+                    // disable launchers1 sprite
+
+
+                    // enable launchers2 sprite
+
+                }
+                if (arr[2])
+                {
+                    // disbale launchers2 sprite
+
+                    // enable launchers3 sprite
+
+                }
+                break;
+            case "solarPanels":
+                if (arr[0])
+                {
+                    // enable solar1 sprite
+                    solarIndex = 1;
+
+                }
+
+                else
+                {
+                    solarIndex = 0;
+                }
+                if (arr[1])
+                {
+                    // disable solar1 sprite
+                    solarIndex = 2;
+                    // enable solar2 sprite
+
+                }
+                if (arr[2])
+                {
+                    // disable solar2 sprite
+                    solarIndex = 3;
+                    // enable solar3 sprite
+
+                }
+                break;
+            case "fuelEfficiency":
+                if (arr[0])
+                {
+                    // enable fuel1 sprite
+                    fuelIndex = 1;
+                }
+                else
+                {
+                    fuelIndex = 0;
+                }
+                if (arr[1])
+                {
+                    // disbale fuel1 sprite
+                    fuelIndex = 2;
+                    // enable fuel2 sprite
+
+                }
+                if (arr[2])
+                {
+                    // disbale fuel2 sprite
+                    fuelIndex = 3;
+                    // enable fuel3 sprite
+
+                }
+                break;
+            case "wealthExpediters":
+                if (arr[0])
+                {
+                    // enable budget1 sprite
+                    budgetindex = 1;
+
+                }
+                else
+                {
+                    budgetindex = 0;
+                }
+                if (arr[1])
+                {
+                    // disable budget1 sprite
+                    budgetindex = 2;
+                    // enable budget2 sprite
+
+                }
+                if (arr[2])
+                {
+                    // disable budget2 sprite
+                    budgetindex = 3;
+                    // enable budget3 sprite
+                    
+                }
+                break;
+            default:
+                return;
+        }
+    }
     //grab correct sprite method for budget
     public Sprite getBudgetSprite(bool[] budgetArray){
         if (budgetArray[0]){
+            // enable budget1 sprite
             return budgetSpriteArray[0];
         }
         if (budgetArray[1]){
+            // enable budget2 sprite, disable budget1 sprite
             return budgetSpriteArray[1];
         }
         if (budgetArray[2]){
+            // enable budget3 sprite, disbale budget2
             return budgetSpriteArray[2];
         }
         else{
@@ -205,12 +360,15 @@ public class SpriteManager : MonoBehaviour
     //grab correct sprite method for fuel
     public Sprite getFuelSprite(bool[] fuelArray){
         if (fuelArray[0]){
+            // enable fuelSprite1
             return fuelSpriteArray[0];
         }
         if (fuelArray[1]){
+            // enable fuelSprite2, disable fuelSprite2
             return fuelSpriteArray[1];
         }
         if (fuelArray[2]){
+            // enable fuelSprite3, disable fuelSprite2
             return fuelSpriteArray[2];
         }
         else{
@@ -221,12 +379,15 @@ public class SpriteManager : MonoBehaviour
     //grab correct sprite method for solar
     public Sprite getSolarSprite(bool[] solArray){
         if (solArray[0]){
+            // enable solarSprite1
             return solarSpriteArray[0];
         }
         if (solArray[1]){
+            // enable solarSprite2, disable solarSprite1
             return solarSpriteArray[1];
         }
         if (solArray[2]){
+            // enable solarSprite3, disable solarSprite2
             return solarSpriteArray[2];
         }
         else{
