@@ -213,7 +213,7 @@ public class SpriteManager : MonoBehaviour
         var upgradeBoolArray = new bool[1];
         switch (upgradeName)
         {
-            case "launchers":
+            case "fuelEfficiency":
                 upgradeBoolArray = upManage.getUpgradeArray(upgradeName);
                 break;
             case "solarPanels":
