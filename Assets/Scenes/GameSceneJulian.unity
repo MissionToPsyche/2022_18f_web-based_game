@@ -873,6 +873,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   astroid: {fileID: 21300000, guid: f0bc8ab82412e7045ad3314247c2e2d3, type: 3}
   coin: {fileID: 21300000, guid: 34d478694990e014c93f2ea3c72377fc, type: 3}
+  cloud: {fileID: 21300000, guid: 20f5a02c3f09de64e92b7f7f856fe042, type: 3}
+  fuel: {fileID: 21300000, guid: cfdef95ca99e09a42bd6bf3aa572c057, type: 3}
+  bird: {fileID: 21300000, guid: 83fe3c6bab331e14ba0eb1f849edd421, type: 3}
 --- !u!4 &622578008
 Transform:
   m_ObjectHideFlags: 0
