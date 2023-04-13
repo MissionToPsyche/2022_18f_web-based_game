@@ -1,0 +1,7 @@
+Title: Vacuum of space
+File type: Wav
+Sample rate: 44100 Hz 24 bit
+Key Ab minor (Heavily modulated)
+Bpm: 90
+Signature: 4/4
+Loop: Yes

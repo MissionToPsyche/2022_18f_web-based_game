@@ -237,6 +237,17 @@ using UnityEngine.UI;
             boomEffect.Play();
             Destroy(collision.gameObject, .02f);
             obstaclesCrashedCount += 1;
+            body.AddForce(15f * gameManager.boost_speed * Vector2.down); 
+        }
+        else if(name == "Fuel"){
+            //coinEffect.Play();
+            Destroy(collision.gameObject, .02f);
+            currentFuel += (maxFuel*.2f);
+        }
+        else if(name == "Bird"){
+            //coinEffect.Play();
+            Destroy(collision.gameObject, .02f);
+            body.AddForce(5f * gameManager.boost_speed * Vector2.down); 
         }
     }
 

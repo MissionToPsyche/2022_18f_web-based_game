@@ -873,6 +873,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   astroid: {fileID: 21300000, guid: f0bc8ab82412e7045ad3314247c2e2d3, type: 3}
   coin: {fileID: 21300000, guid: 34d478694990e014c93f2ea3c72377fc, type: 3}
+  cloud: {fileID: 21300000, guid: 20f5a02c3f09de64e92b7f7f856fe042, type: 3}
+  fuel: {fileID: 21300000, guid: cfdef95ca99e09a42bd6bf3aa572c057, type: 3}
+  bird: {fileID: 21300000, guid: 83fe3c6bab331e14ba0eb1f849edd421, type: 3}
 --- !u!4 &622578008
 Transform:
   m_ObjectHideFlags: 0
@@ -913,7 +916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813886729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -102, y: 48438, z: 5}
+  m_LocalPosition: {x: -122, y: 48438, z: 5}
   m_LocalScale: {x: 1000, y: 20000, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1820,7 +1823,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4b4dd7245f6104c8c8eb07ccf6b386ed, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98f07d90fc01ccd48904f991ec1afc9a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1920,18 +1923,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craft: {fileID: 21300000, guid: 1cc104ebc96d547b7ba7262d471ffa3c, type: 3}
   budgetSpriteArray:
+  - {fileID: 21300000, guid: 91bf91599c46044dcb028c5e2867741a, type: 3}
   - {fileID: 21300000, guid: 186e77c4e2a334bb5ada3f47d74ea3d0, type: 3}
   - {fileID: 21300000, guid: 2afbdfd4db7254a819913bf4438d5640, type: 3}
   - {fileID: 21300000, guid: 7c33da23ddd8a46feb48a02334a3dd23, type: 3}
   fuelSpriteArray:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 91bf91599c46044dcb028c5e2867741a, type: 3}
+  - {fileID: 21300000, guid: 2bb77450194c34a6d9d307206641e0a0, type: 3}
+  - {fileID: 21300000, guid: a1231f7de8af0436488b9501bd345d43, type: 3}
   - {fileID: 21300000, guid: 2adddce598a8e40198e4c2f6ab3ca1fb, type: 3}
   solarSpriteArray:
+  - {fileID: 21300000, guid: 91bf91599c46044dcb028c5e2867741a, type: 3}
   - {fileID: 21300000, guid: 0ba7625cd2c7b4aabab738a1edd28494, type: 3}
   - {fileID: 21300000, guid: 0589a534e57fb48b1b01b6c2cbd7c99c, type: 3}
   - {fileID: 21300000, guid: b496a85744b8e4d9695108fa438fd734, type: 3}
   solarNoBoostArray:
+  - {fileID: 21300000, guid: 91bf91599c46044dcb028c5e2867741a, type: 3}
   - {fileID: 21300000, guid: 657e58f738e4f455e95cbef6d494ef04, type: 3}
   - {fileID: 21300000, guid: 27167a4e9230c43e5b755486c000f364, type: 3}
   - {fileID: 21300000, guid: 1d60c420efe4b4f629d58833d7436100, type: 3}
@@ -2277,9 +2284,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ad403fe5cb1141c4db962f01954ad170, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.224
+  m_Volume: 0.305
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2719,7 +2726,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889148794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -101, y: 28527, z: 5}
+  m_LocalPosition: {x: -122, y: 28527, z: 5}
   m_LocalScale: {x: 1000, y: 20000, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
