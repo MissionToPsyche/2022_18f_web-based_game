@@ -12,11 +12,38 @@ public class ItemGenerator : MonoBehaviour
 
     [SerializeField] private Sprite astroid;
     [SerializeField] private Sprite coin;
+    [SerializeField] private Sprite cloud;
+    [SerializeField] private Sprite fuel;
+    [SerializeField] private Sprite bird;
+
+    private float coinStart = 0f;
+    private float coinEnd = 10000000f;
+
+    private float astroidStart = 0f;
+    private float astroidEnd = 10000000f;
+
+    private float cloudStart = 0f;
+    private float cloudEnd = 5000f;
+
+    private float fuelStart = 0f;
+    private float fuelEnd = 10000000f;
+
+    private float birdStart = 0f;
+    private float birdEnd = 5000f;
+
     void Start()
     {
         psycheCraft = GameObject.Find("/Psyche/PsycheCraft");
         InvokeRepeating("CoinGenerator", 2.0f, 2f);
         InvokeRepeating("AstroidGenerator", 2.0f, 1.5f);
+        InvokeRepeating("CloudGenerator", 2.0f, 1f);
+        InvokeRepeating("FuelGenerator", 2.0f, 5f);
+        InvokeRepeating("BirdGenerator", 2.0f, 5f);
+
+        for(int i = 0; i < 5; i++){
+            CloudGenerator();
+            CoinGenerator();
+        }
         //AstroidGenerator();
         //CoinGenerator();
     }
@@ -27,7 +54,12 @@ public class ItemGenerator : MonoBehaviour
         //CoinGenerator();
     }
 
-    private GameObject AstroidGenerator(){
+    private void AstroidGenerator(){
+        Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
+        float y = tempPos.y;
+        if(!(astroidStart <= y && y <= astroidEnd)){
+            return;
+        }
         GameObject go = new GameObject();
         go.name = "Astroid";
         go.AddComponent<SpriteRenderer>();
@@ -37,17 +69,21 @@ public class ItemGenerator : MonoBehaviour
         go.GetComponent<BoxCollider2D>().isTrigger = true;
 
         go.GetComponent<SpriteRenderer>().sprite = astroid;
-        Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
 
-        tempPos += new Vector3(Random.Range(-20f,20f), 50, 0);
+        tempPos += new Vector3(Random.Range(-20f,20f), Random.Range(50f,100f), 0);
         //tempPos += new Vector3(-25f, 1, 0);
         go.GetComponent<Transform>().position = tempPos;
         go.GetComponent<Transform>().localScale = new Vector3(.1f,.1f,.1f);
         Destroy(go, 30f);
-        return go;
+        return;
     }
 
-    private GameObject CoinGenerator(){
+    private void CoinGenerator(){
+        Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
+        float y = tempPos.y;
+        if(!(coinStart <= y && y <= coinEnd)){
+            return;
+        }
         GameObject go = new GameObject();
         go.name = "Coin";
         go.AddComponent<SpriteRenderer>();
@@ -56,20 +92,74 @@ public class ItemGenerator : MonoBehaviour
         go.GetComponent<BoxCollider2D>().size = new Vector3(.65f, .65f, 1f);
         //go.GetComponent<BoxCollider2D>().size = new Vector3(1f, 1f, 1f);
         go.GetComponent<SpriteRenderer>().sprite = coin;
-        Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
 
-        tempPos += new Vector3(Random.Range(-20f,20f), 50, 0);
+        tempPos += new Vector3(Random.Range(-20f,20f), Random.Range(50f,100f), 0);
         //tempPos += new Vector3(-25f, 1, 0);
         go.GetComponent<Transform>().position = tempPos;
         go.GetComponent<Transform>().localScale = new Vector3(3f,3f,3f);
         Destroy(go, 15f);
-        return go;
+        return;
     }
 
-/*  doesnt work
-    private void OnCollisionEnter2D(Collision2D collision){
-        Debug.Log("Item Gen:" + collision.gameObject.name);
-        Destroy(this.gameObject);
-    }*/
+    private void CloudGenerator(){
+        Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
+        float y = tempPos.y;
+        if(!(cloudStart <= y && y <= cloudEnd)){
+            return;
+        }
+        GameObject go = new GameObject();
+        go.name = "Cloud";
+        go.AddComponent<SpriteRenderer>();
+        go.GetComponent<SpriteRenderer>().sprite = cloud;
 
+        tempPos += new Vector3(Random.Range(-20f,20f), Random.Range(50f,100f), 0);
+        go.GetComponent<Transform>().position = tempPos;
+        //go.GetComponent<Transform>().localScale = new Vector3(.1f,.1f,.1f);
+        Destroy(go, 30f);
+        return;
+    }
+    private void FuelGenerator(){
+        Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
+        float y = tempPos.y;
+        if(!(fuelStart <= y && y <= fuelEnd)){
+            return;
+        }
+        GameObject go = new GameObject();
+        go.name = "Fuel";
+        go.AddComponent<SpriteRenderer>();
+        go.AddComponent<BoxCollider2D>();
+        go.GetComponent<BoxCollider2D>().isTrigger = true;
+        go.GetComponent<BoxCollider2D>().size = new Vector3(1.695577f, 2.058449f, 1f);
+        go.GetComponent<SpriteRenderer>().sprite = fuel;
+
+        tempPos += new Vector3(Random.Range(-20f,20f), Random.Range(50f,100f), 0);
+        go.GetComponent<Transform>().position = tempPos;
+        go.GetComponent<Transform>().localScale = new Vector3(.8f,.8f,1f);
+        Destroy(go, 15f);
+        return;
+    }
+
+    private void BirdGenerator(){
+        Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
+        float y = tempPos.y;
+        if(!(birdStart <= y && y <= birdEnd)){
+            return;
+        }
+        GameObject go = new GameObject();
+        go.name = "Bird";
+        go.AddComponent<SpriteRenderer>();
+        go.AddComponent<BoxCollider2D>();
+        go.GetComponent<BoxCollider2D>().size = new Vector3(15.85146f, 11.75446f, 1f);
+        //go.GetComponent<BoxCollider2D>().size = new Vector3(1f, 1f, 1f);
+        go.GetComponent<BoxCollider2D>().isTrigger = true;
+
+        go.GetComponent<SpriteRenderer>().sprite = bird;
+
+        tempPos += new Vector3(Random.Range(-20f,20f), Random.Range(50f,100f), 0);
+        //tempPos += new Vector3(-25f, 1, 0);
+        go.GetComponent<Transform>().position = tempPos;
+        go.GetComponent<Transform>().localScale = new Vector3(.15f,.15f,.15f);
+        Destroy(go, 30f);
+        return;
+    }
 }
