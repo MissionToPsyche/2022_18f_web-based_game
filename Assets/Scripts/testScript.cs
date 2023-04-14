@@ -64,8 +64,8 @@ using UnityEngine.UI;
        // run_start = true;
         launch_text.enabled = false;
         launch_text.alpha = 0f;
-        fallingBoostThreshold = -3f;
-        fallingRunEndThreshold = -18.0f;
+        fallingBoostThreshold = -4.0f;
+        fallingRunEndThreshold = -30.0f;
 
         distanceTraveled = 0;
         obstaclesCrashedCount = 0;
@@ -166,9 +166,9 @@ using UnityEngine.UI;
 
             if (((isBoosting) && (currentFuel > 0)) && (!isFalling_Boost)) // when boosting
             {
-                currentFuel -= gameManager.fuelBurnRate * Time.deltaTime; // decrease fuel by its burn rate, update the slider to show this
-                body.AddForce(0.8f * gameManager.boost_speed * Vector2.up); // update velocity when boosting
-                body.velocity = new Vector2(moveInput * gameManager.move_speed, body.velocity.y);
+                currentFuel -= gameManager.fuelBurnRate * Time.fixedDeltaTime; // decrease fuel by its burn rate, update the slider to show this
+               // body.AddForce(Vector2.up * 0.8f * gameManager.boost_speed); // update velocity when boosting
+                body.velocity = new Vector2(moveInput * gameManager.move_speed, body.velocity.y + (gameManager.boost_speed * Time.fixedDeltaTime));
             }
 
             else if (((isFalling_Boost) && (isBoosting)) && (currentFuel > 0))
