@@ -19,7 +19,7 @@ using UnityEngine.UI;
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource leftmoveeffect;
     [SerializeField] private AudioSource coinEffect;
-    [SerializeField] private AudioSource boomEffect;
+    // [SerializeField] private AudioSource boomEffect;
 
     [SerializeField] private TMPro.TextMeshProUGUI distanceText;
     [SerializeField] private TMPro.TextMeshProUGUI speedText;
@@ -234,7 +234,7 @@ using UnityEngine.UI;
             coinsCollected += coinsValue;
         }
         else if(name == "Astroid"){
-            boomEffect.Play();
+            // boomEffect.Play();
             Destroy(collision.gameObject, .02f);
             obstaclesCrashedCount += 1;
             body.AddForce(15f * gameManager.boost_speed * Vector2.down); 
