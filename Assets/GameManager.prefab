@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5353915886869663167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5353915886869663165}
+  - component: {fileID: 5353915886869663164}
+  - component: {fileID: 5353915886869663162}
+  - component: {fileID: 5353915886869663163}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5353915886869663165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353915886869663167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 932.69257, y: 571.77295, z: -12.545512}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5353915886869663164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353915886869663167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58466a26d4461049a368e3a6e448fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5353915886869663162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353915886869663167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d8bbf7d1f3ab249847887191ab31f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCountText: {fileID: 0}
+--- !u!114 &5353915886869663163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353915886869663167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722120dbc4f0e834eb404ea17eff8827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCountText: {fileID: 0}
+  upgradeEffect: {fileID: 0}
+  launcherUpgrade1: {fileID: 0}
+  launcherUpgrade2: {fileID: 0}
+  launcherUpgrade3: {fileID: 0}
+  SolarPanelUpgrade1: {fileID: 0}
+  SolarPanelUpgrade2: {fileID: 0}
+  SolarPanelUpgrade3: {fileID: 0}
+  WeightRedistributionUpgrade1: {fileID: 0}
+  WeightRedistributionUpgrade2: {fileID: 0}
+  WeightRedistributionUpgrade3: {fileID: 0}
+  FuelEfficiencyUpgrade1: {fileID: 0}
+  FuelEfficiencyUpgrade2: {fileID: 0}
+  FuelEfficiencyUpgrade3: {fileID: 0}
+  SoftwareUpdateUpgrade1: {fileID: 0}
+  SoftwareUpdateUpgrade2: {fileID: 0}
+  SoftwareUpdateUpgrade3: {fileID: 0}
+  WealthExpediterUpgrade1: {fileID: 0}
+  WealthExpediterUpgrade2: {fileID: 0}
+  WealthExpediterUpgrade3: {fileID: 0}

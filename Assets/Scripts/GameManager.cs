@@ -219,7 +219,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(launch_speed);
 
 
-        // deduct the price of upgrade from current coins
+        // 
 
     }
 
@@ -230,7 +230,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(launch_speed);
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeSolarPanels1()
@@ -238,7 +238,7 @@ public class GameManager : MonoBehaviour
         // marginally increases the power of thrusters/boost
         boost_speed = 27.5f;
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeSolarPanels2()
@@ -247,7 +247,7 @@ public class GameManager : MonoBehaviour
         boost_speed = 40;
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeSolarPanels3()
@@ -256,7 +256,7 @@ public class GameManager : MonoBehaviour
         boost_speed = 55f;
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeWeightTransfer1()
@@ -264,7 +264,7 @@ public class GameManager : MonoBehaviour
         // minimally reduce speed loss/impact from collisions
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeWeightTransfer2()
@@ -272,14 +272,14 @@ public class GameManager : MonoBehaviour
         // moderately reduce speed loss/impact from collisions
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
     public void upgradeWeightTransfer3()
     {
         // significantly reduce speed loss/impact from collisions
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeSoftwareUpdate1()
@@ -287,7 +287,7 @@ public class GameManager : MonoBehaviour
         // marginally increase horizontal move speed
         move_speed = 25f;
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeSoftwareUpdate2()
@@ -297,7 +297,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(move_speed);
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeSoftwareUpdate3()
@@ -306,7 +306,7 @@ public class GameManager : MonoBehaviour
         move_speed = 37.5f;
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeFuelEfficiency1()
@@ -315,7 +315,7 @@ public class GameManager : MonoBehaviour
         fuelBurnRate = 8f;
         maxFuel = 125;
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeFuelEfficiency2()
@@ -325,7 +325,7 @@ public class GameManager : MonoBehaviour
         maxFuel = 165;
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeFuelEfficiency3()
@@ -335,7 +335,7 @@ public class GameManager : MonoBehaviour
         maxFuel = 230f;
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeWealthExpediter1()
@@ -343,7 +343,7 @@ public class GameManager : MonoBehaviour
         // marginally increase coins gained
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeWealthExpediter2()
@@ -351,7 +351,7 @@ public class GameManager : MonoBehaviour
         // moderately increase coins gained
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
     public void upgradeWealthExpediter3()
@@ -359,7 +359,7 @@ public class GameManager : MonoBehaviour
         // significantly increase koins gained
 
 
-        // deduct the price of upgrade from current coins
+        // 
     }
 
 }

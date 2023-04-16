@@ -29,6 +29,6 @@ public class ShopNavigation : MonoBehaviour
     }
 
     public void switchSceneToMainMenu(){
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "MainMenuScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "UpdatedMainMenu");
     }
 }
