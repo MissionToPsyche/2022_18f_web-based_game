@@ -25,6 +25,8 @@ using UnityEngine.UI;
     [SerializeField] private TMPro.TextMeshProUGUI speedText;
     [SerializeField] private TMPro.TextMeshProUGUI coinText;
 
+    [SerializeField] private Sprite psycheAstroidSprite;
+
     // private bool run_start = false;
     private bool isBoosting = false;
     private bool isGrounded = false;
@@ -46,6 +48,9 @@ using UnityEngine.UI;
     private int obstaclesCrashedCount;
     private float flightDuration;
     private float coinDistMult;
+
+    private float spawnPsycheAstroidDistance;
+    private bool isPsycheSpawned;
 
     GameManager gameManager;
     public Animator slingshotAnim;
@@ -75,6 +80,10 @@ using UnityEngine.UI;
         coinsCollected = 0;
         coinsValue = gameManager.coinValue;
         coinDistMult = gameManager.coinDistanceMultiplier;
+
+        spawnPsycheAstroidDistance = 14500f;
+        isPsycheSpawned = false;
+
     }
 
     private void Update()
@@ -88,6 +97,11 @@ using UnityEngine.UI;
         DataTransferStatic.setFlightDuration(flightDuration);
         DataTransferStatic.setCoinDistanceMultiplier(coinDistMult);
         //DataTransferStatic.setFlightDuration()
+
+        if(body.position.y > spawnPsycheAstroidDistance && isPsycheSpawned == false){
+            spawnPsycheAstroid();
+            isPsycheSpawned = true;
+        }
 
         if(body.position.y > distanceTraveled){
             distanceTraveled = body.position.y;
@@ -261,6 +275,33 @@ using UnityEngine.UI;
             Destroy(collision.gameObject, .02f);
             body.velocity = new Vector2(moveInput * gameManager.move_speed, body.velocity.y - (body.velocity.y * speedReductionPercent * birdPenalty));
         }
+        else if(name == "PsycheAstroid"){
+            InvokeRepeating("SwitchToWinScene", 2.5f, 500f);
+        }
+    }
+
+    private void spawnPsycheAstroid(){
+        Debug.Log("SPAWNED!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        Vector3 tempPos = pos.position;
+        float y = tempPos.y;
+        GameObject go = new GameObject();
+        go.name = "PsycheAstroid";
+        go.AddComponent<SpriteRenderer>();
+        go.AddComponent<BoxCollider2D>();
+        go.GetComponent<BoxCollider2D>().size = new Vector3(9.747856f, 3.426072f, 1f);
+        //go.GetComponent<BoxCollider2D>().size = new Vector3(1f, 1f, 1f);
+        go.GetComponent<BoxCollider2D>().isTrigger = true;
+
+        go.GetComponent<SpriteRenderer>().sprite = psycheAstroidSprite;
+
+        tempPos += new Vector3(0, 200f, 0);
+        go.GetComponent<Transform>().position = tempPos;
+        go.GetComponent<Transform>().localScale = new Vector3(10f,10f,1f);
+        return;
+    }
+
+    private void SwitchToWinScene(){
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "EndGameScene");
     }
 
 
