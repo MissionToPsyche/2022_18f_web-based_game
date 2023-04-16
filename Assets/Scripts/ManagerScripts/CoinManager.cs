@@ -6,7 +6,7 @@ public class CoinManager : MonoBehaviour
 {
 
     public static CoinManager instance { get; private set; }
-    [SerializeField] private static int coinCount = 5000;
+    [SerializeField] private static int coinCount = 0;
 
     // If there is an instance, and it's not me, delete myself.
     private void Awake()
