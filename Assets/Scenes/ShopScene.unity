@@ -1003,96 +1003,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271663429}
   m_CullTransparentMesh: 1
---- !u!1 &282348177
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 282348179}
-  - component: {fileID: 282348178}
-  - component: {fileID: 282348180}
-  - component: {fileID: 282348181}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &282348178
+--- !u!114 &282348178 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5353915886869663164, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+  m_PrefabInstance: {fileID: 5353915887151449902}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282348177}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f58466a26d4461049a368e3a6e448fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &282348179
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282348177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 932.69257, y: 571.77295, z: -12.545512}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &282348180
+--- !u!114 &282348181 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+  m_PrefabInstance: {fileID: 5353915887151449902}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282348177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d8bbf7d1f3ab249847887191ab31f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinCountText: {fileID: 1918673655}
---- !u!114 &282348181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282348177}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 722120dbc4f0e834eb404ea17eff8827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCountText: {fileID: 1918673655}
-  launcherUpgrade1: {fileID: 1148853392}
-  launcherUpgrade2: {fileID: 1085180428}
-  launcherUpgrade3: {fileID: 897042796}
-  SolarPanelUpgrade1: {fileID: 2082753715}
-  SolarPanelUpgrade2: {fileID: 870770391}
-  SolarPanelUpgrade3: {fileID: 2141278631}
-  WeightRedistributionUpgrade1: {fileID: 794609867}
-  WeightRedistributionUpgrade2: {fileID: 1757735225}
-  WeightRedistributionUpgrade3: {fileID: 2086017959}
-  FuelEfficiencyUpgrade1: {fileID: 282439439}
-  FuelEfficiencyUpgrade2: {fileID: 169031873}
-  FuelEfficiencyUpgrade3: {fileID: 1866140771}
-  SoftwareUpdateUpgrade1: {fileID: 1344278950}
-  SoftwareUpdateUpgrade2: {fileID: 1518582681}
-  SoftwareUpdateUpgrade3: {fileID: 2090664815}
-  WealthExpediterUpgrade1: {fileID: 1766367839}
-  WealthExpediterUpgrade2: {fileID: 2066620663}
-  WealthExpediterUpgrade3: {fileID: 474435578}
 --- !u!1 &282439439
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,3 +6322,140 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &5353915887151449902
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5353915886869663162, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: coinCountText
+      value: 
+      objectReference: {fileID: 1918673655}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: coinCountText
+      value: 
+      objectReference: {fileID: 1918673655}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: launcherUpgrade1
+      value: 
+      objectReference: {fileID: 1148853392}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: launcherUpgrade2
+      value: 
+      objectReference: {fileID: 1085180428}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: launcherUpgrade3
+      value: 
+      objectReference: {fileID: 897042796}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: SolarPanelUpgrade1
+      value: 
+      objectReference: {fileID: 2082753715}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: SolarPanelUpgrade2
+      value: 
+      objectReference: {fileID: 870770391}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: SolarPanelUpgrade3
+      value: 
+      objectReference: {fileID: 2141278631}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: FuelEfficiencyUpgrade1
+      value: 
+      objectReference: {fileID: 282439439}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: FuelEfficiencyUpgrade2
+      value: 
+      objectReference: {fileID: 169031873}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: FuelEfficiencyUpgrade3
+      value: 
+      objectReference: {fileID: 1866140771}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: SoftwareUpdateUpgrade1
+      value: 
+      objectReference: {fileID: 1344278950}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: SoftwareUpdateUpgrade2
+      value: 
+      objectReference: {fileID: 1518582681}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: SoftwareUpdateUpgrade3
+      value: 
+      objectReference: {fileID: 2090664815}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: WealthExpediterUpgrade1
+      value: 
+      objectReference: {fileID: 1766367839}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: WealthExpediterUpgrade2
+      value: 
+      objectReference: {fileID: 2066620663}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: WealthExpediterUpgrade3
+      value: 
+      objectReference: {fileID: 474435578}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: WeightRedistributionUpgrade1
+      value: 
+      objectReference: {fileID: 794609867}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: WeightRedistributionUpgrade2
+      value: 
+      objectReference: {fileID: 1757735225}
+    - target: {fileID: 5353915886869663163, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: WeightRedistributionUpgrade3
+      value: 
+      objectReference: {fileID: 2086017959}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 932.69257
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 571.77295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.545512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663165, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353915886869663167, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c889812997a0daf43b1e33707f95bf7d, type: 3}

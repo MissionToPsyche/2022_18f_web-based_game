@@ -47,6 +47,7 @@ using UnityEngine.UI;
     private float flightDuration;
 
     GameManager gameManager;
+    public Animator slingshotAnim;
     public void Awake()
     {
         // DataTransferStatic is a static class for transfering data from game scene to result scene
@@ -57,8 +58,7 @@ using UnityEngine.UI;
         body = GetComponent<Rigidbody2D>();
         collid = GetComponent<BoxCollider2D>();
         gameManager = FindObjectOfType<GameManager>();
-        xStart = pos.position.x;
-        yStart = pos.position.y;
+
         maxFuel = gameManager.maxFuel;
         currentFuel = maxFuel;
        // run_start = true;
@@ -162,6 +162,7 @@ using UnityEngine.UI;
                 GameManager.runStart = false;
                 launch_text.enabled = true;
                 StartCoroutine(waitForKeyPress());
+                // might need to launch here instead
             }
 
             if (((isBoosting) && (currentFuel > 0)) && (!isFalling_Boost)) // when boosting
@@ -208,7 +209,9 @@ using UnityEngine.UI;
         {
             yield return null;
         }
-   
+
+        slingshotAnim.SetTrigger("Start_Slingshot");
+        yield return new WaitForSeconds(0.3f);
         Launch();
         launch_text.enabled = false;
         yield return new WaitForSeconds(0);
