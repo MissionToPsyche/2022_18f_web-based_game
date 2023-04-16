@@ -19,6 +19,7 @@ using UnityEngine.UI;
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource leftmoveeffect;
     [SerializeField] private AudioSource coinEffect;
+    [SerializeField] private AudioSource fuelEffect;
     // [SerializeField] private AudioSource boomEffect;
 
     [SerializeField] private TMPro.TextMeshProUGUI distanceText;
@@ -240,6 +241,7 @@ using UnityEngine.UI;
             body.AddForce(15f * gameManager.boost_speed * Vector2.down); 
         }
         else if(name == "Fuel"){
+            fuelEffect.Play();
             //coinEffect.Play();
             Destroy(collision.gameObject, .02f);
             currentFuel += (maxFuel*.2f);
