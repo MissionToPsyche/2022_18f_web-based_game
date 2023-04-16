@@ -211,7 +211,10 @@ using UnityEngine.UI;
         }
 
         slingshotAnim.SetTrigger("Start_Slingshot");
+<<<<<<< HEAD
         yield return new WaitForSeconds(0.3f);
+=======
+>>>>>>> 9e2843c957d08bc1f9082eee0dccac8ef2ce0bd5
         Launch();
         launch_text.enabled = false;
         yield return new WaitForSeconds(0);
