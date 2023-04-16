@@ -45,6 +45,7 @@ using UnityEngine.UI;
     private float distanceTraveled;
     private int obstaclesCrashedCount;
     private float flightDuration;
+    private float coinDistMult;
 
     GameManager gameManager;
     public Animator slingshotAnim;
@@ -72,8 +73,8 @@ using UnityEngine.UI;
         flightDuration = 0f;
 
         coinsCollected = 0;
-        coinsValue = 5;
-
+        coinsValue = gameManager.coinValue;
+        coinDistMult = gameManager.coinDistanceMultiplier;
     }
 
     private void Update()
@@ -85,6 +86,7 @@ using UnityEngine.UI;
         DataTransferStatic.setDistanceTraveled(distanceTraveled);
         DataTransferStatic.setCoinsCollected(coinsCollected);
         DataTransferStatic.setFlightDuration(flightDuration);
+        DataTransferStatic.setCoinDistanceMultiplier(coinDistMult);
         //DataTransferStatic.setFlightDuration()
 
         if(body.position.y > distanceTraveled){
@@ -233,15 +235,19 @@ using UnityEngine.UI;
             // ground collision
         }
         else if(name == "Coin"){
+            coinsValue = gameManager.coinValue;
             coinEffect.Play();
             Destroy(collision.gameObject, .02f);
             coinsCollected += coinsValue;
         }
         else if(name == "Astroid"){
+            float speedReductionPercent = gameManager.collisionReduction;
+            float astroidPenalty = .50f;
             // boomEffect.Play();
             Destroy(collision.gameObject, .02f);
             obstaclesCrashedCount += 1;
-            body.AddForce(15f * gameManager.boost_speed * Vector2.down); 
+            //body.AddForce(15f * gameManager.boost_speed * Vector2.down); 
+            body.velocity = new Vector2(moveInput * gameManager.move_speed, body.velocity.y - (body.velocity.y * speedReductionPercent * astroidPenalty));
         }
         else if(name == "Fuel"){
             //coinEffect.Play();
@@ -249,9 +255,11 @@ using UnityEngine.UI;
             currentFuel += (maxFuel*.2f);
         }
         else if(name == "Bird"){
+            float speedReductionPercent = gameManager.collisionReduction;
+            float birdPenalty = .25f;
             //coinEffect.Play();
             Destroy(collision.gameObject, .02f);
-            body.AddForce(5f * gameManager.boost_speed * Vector2.down); 
+            body.velocity = new Vector2(moveInput * gameManager.move_speed, body.velocity.y - (body.velocity.y * speedReductionPercent * birdPenalty));
         }
     }
 

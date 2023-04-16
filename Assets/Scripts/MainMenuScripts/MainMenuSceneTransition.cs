@@ -12,4 +12,8 @@ public class MainMenuSceneTransition : MonoBehaviour
     public void switchSceneToShop(){
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "ShopScene");
     }
+
+    public void switchSceneToUpdatedMainMenu(){
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName: "UpdatedMainMenu");
+    }
 }
