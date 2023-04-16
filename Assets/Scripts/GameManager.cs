@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public float launch_speed = 50f;
     public float maxFuel = 100f;
     public float fuelBurnRate = 10f;
+    public float collisionReduction = 1f;
+    public float coinDistanceMultiplier = 1f;
+    public int coinValue = 10;
 
     public static bool runStart = true;
     public static bool atShop = false;
@@ -262,7 +265,7 @@ public class GameManager : MonoBehaviour
     public void upgradeWeightTransfer1()
     {
         // minimally reduce speed loss/impact from collisions
-
+        collisionReduction = .66f;
 
         // 
     }
@@ -270,14 +273,14 @@ public class GameManager : MonoBehaviour
     public void upgradeWeightTransfer2()
     {
         // moderately reduce speed loss/impact from collisions
-
+        collisionReduction = .33f;
 
         // 
     }
     public void upgradeWeightTransfer3()
     {
         // significantly reduce speed loss/impact from collisions
-
+        collisionReduction = .1f;
 
         // 
     }
@@ -341,7 +344,8 @@ public class GameManager : MonoBehaviour
     public void upgradeWealthExpediter1()
     {
         // marginally increase coins gained
-
+        coinDistanceMultiplier = 1.5f;
+        coinValue = 50;
 
         // 
     }
@@ -349,7 +353,8 @@ public class GameManager : MonoBehaviour
     public void upgradeWealthExpediter2()
     {
         // moderately increase coins gained
-
+        coinDistanceMultiplier = 2f;
+        coinValue = 75;
 
         // 
     }
@@ -357,7 +362,8 @@ public class GameManager : MonoBehaviour
     public void upgradeWealthExpediter3()
     {
         // significantly increase koins gained
-
+        coinDistanceMultiplier = 3f;
+        coinValue = 100;
 
         // 
     }

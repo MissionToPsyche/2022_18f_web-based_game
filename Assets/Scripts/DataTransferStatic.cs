@@ -7,6 +7,7 @@ public static class DataTransferStatic
     private static float distanceTraveled { get; set; }
     private static int coinsCollected { get; set; }
     private static float flightDuration { get; set; }
+    private static float coinDistanceMultiplier { get; set; }
 
     public static void resetData(){
         distanceTraveled = 0f;
@@ -26,6 +27,10 @@ public static class DataTransferStatic
         flightDuration = duration;
     }
 
+    public static void setCoinDistanceMultiplier(float multiplier){
+        coinDistanceMultiplier = multiplier;
+    }
+
     public static float getDistanceTraveled(){
         return distanceTraveled;
     }
@@ -36,6 +41,10 @@ public static class DataTransferStatic
 
     public static float getFlightDuration(){
         return flightDuration;
+    }
+
+    public static float getCoinDistanceMultiplier(){
+        return coinDistanceMultiplier;
     }
     
 }
