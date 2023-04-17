@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class VisualizeUpgrades : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class VisualizeUpgrades : MonoBehaviour
     [SerializeField] private GameObject WealthExpediterUpgrade3;
 
     
+
 
     void Start()
     {
@@ -77,12 +79,14 @@ public class VisualizeUpgrades : MonoBehaviour
     }
 
     public void visualizeSingleUpdate(string upgradeName){
+        TextMeshProUGUI textMeshPro = new GameObject().AddComponent<TextMeshProUGUI>();
         GameObject square1 = new GameObject();
         GameObject square2 = new GameObject();
         GameObject square3 = new GameObject();
         var upgradeBoolArray = new bool[1];
         switch(upgradeName){
             case "launchers":
+                textMeshPro = GameObject.Find("thrusterPrice").GetComponent<TextMeshProUGUI>();
                 square1 = launcherUpgrade1;
                 square2 = launcherUpgrade2;
                 square3 = launcherUpgrade3;
@@ -122,10 +126,12 @@ public class VisualizeUpgrades : MonoBehaviour
                 return;
         }
         if(upgradeBoolArray[0] == true){
+            textMeshPro.text = "300";
             var spriteRenderer = square1.GetComponent<Image>();
             spriteRenderer.enabled = true;
         }
         if(upgradeBoolArray[1] == true){
+            textMeshPro.text = "300";
             var spriteRenderer = square2.GetComponent<Image>();
             spriteRenderer.enabled = true;
         }
