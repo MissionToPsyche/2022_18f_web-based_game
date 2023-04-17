@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
   m_sharedMaterial: {fileID: -5088747524413039834, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
@@ -1793,7 +1793,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
   m_sharedMaterial: {fileID: -5088747524413039834, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
@@ -3546,7 +3546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
   m_sharedMaterial: {fileID: -5088747524413039834, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
@@ -3833,7 +3833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
   m_sharedMaterial: {fileID: -5088747524413039834, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
@@ -4895,6 +4895,12 @@ MonoBehaviour:
   WealthExpediterUpgrade1: {fileID: 1107779705}
   WealthExpediterUpgrade2: {fileID: 1402156619}
   WealthExpediterUpgrade3: {fileID: 1287803275}
+  thrusterPrice: {fileID: 2058290585}
+  solarPrice: {fileID: 28535686}
+  weightPrice: {fileID: 1156260069}
+  launcherPrice: {fileID: 1971126887}
+  fuelPrice: {fileID: 1068260235}
+  budgetPrice: {fileID: 713565789}
 --- !u!114 &1696907855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5865,7 +5871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
   m_sharedMaterial: {fileID: -5088747524413039834, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
@@ -6168,7 +6174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
   m_sharedMaterial: {fileID: -5088747524413039834, guid: b06587b74d1e49740bbc24e39bfcbe57, type: 2}
