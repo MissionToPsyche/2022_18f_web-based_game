@@ -37,8 +37,12 @@ public class VisualizeUpgrades : MonoBehaviour
     [SerializeField] private GameObject WealthExpediterUpgrade2;
     [SerializeField] private GameObject WealthExpediterUpgrade3;
 
-    
-
+    [SerializeField] private TMPro.TextMeshProUGUI thrusterPrice;
+    [SerializeField] private TMPro.TextMeshProUGUI solarPrice;
+    [SerializeField] private TMPro.TextMeshProUGUI weightPrice;
+    [SerializeField] private TMPro.TextMeshProUGUI launcherPrice;
+    [SerializeField] private TMPro.TextMeshProUGUI fuelPrice;
+    [SerializeField] private TMPro.TextMeshProUGUI budgetPrice;    
 
     void Start()
     {
@@ -79,44 +83,49 @@ public class VisualizeUpgrades : MonoBehaviour
     }
 
     public void visualizeSingleUpdate(string upgradeName){
-        TextMeshProUGUI textMeshPro = new GameObject().AddComponent<TextMeshProUGUI>();
+        TextMeshProUGUI textMeshPro = new TextMeshProUGUI();
         GameObject square1 = new GameObject();
         GameObject square2 = new GameObject();
         GameObject square3 = new GameObject();
         var upgradeBoolArray = new bool[1];
         switch(upgradeName){
             case "launchers":
-                textMeshPro = GameObject.Find("thrusterPrice").GetComponent<TextMeshProUGUI>();
+                textMeshPro = thrusterPrice;
                 square1 = launcherUpgrade1;
                 square2 = launcherUpgrade2;
                 square3 = launcherUpgrade3;
                 upgradeBoolArray = upgradeManager.getUpgradeArray(upgradeName);
                 break;
             case "solarPanels":
+                textMeshPro = solarPrice;
                 square1 = SolarPanelUpgrade1;
                 square2 = SolarPanelUpgrade2;
                 square3 = SolarPanelUpgrade3;
                 upgradeBoolArray = upgradeManager.getUpgradeArray(upgradeName);
                 break;
             case "weightRedistributions":
+                textMeshPro = weightPrice;
                 square1 = WeightRedistributionUpgrade1;
                 square2 = WeightRedistributionUpgrade2;
                 square3 = WeightRedistributionUpgrade3;
                 upgradeBoolArray = upgradeManager.getUpgradeArray(upgradeName);
                 break; 
             case "fuelEfficiency":
+                textMeshPro = launcherPrice;
                 square1 = FuelEfficiencyUpgrade1;
                 square2 = FuelEfficiencyUpgrade2;
                 square3 = FuelEfficiencyUpgrade3;
                 upgradeBoolArray = upgradeManager.getUpgradeArray(upgradeName);
                 break;
             case "softwareUpdates":
+                textMeshPro = fuelPrice;
                 square1 = SoftwareUpdateUpgrade1;
                 square2 = SoftwareUpdateUpgrade2;
                 square3 = SoftwareUpdateUpgrade3;
                 upgradeBoolArray = upgradeManager.getUpgradeArray(upgradeName);
                 break;
             case "wealthExpediters":
+                textMeshPro = budgetPrice;
                 square1 = WealthExpediterUpgrade1;
                 square2 = WealthExpediterUpgrade2;
                 square3 = WealthExpediterUpgrade3;
@@ -131,13 +140,17 @@ public class VisualizeUpgrades : MonoBehaviour
             spriteRenderer.enabled = true;
         }
         if(upgradeBoolArray[1] == true){
-            textMeshPro.text = "300";
+            textMeshPro.text = "500";
             var spriteRenderer = square2.GetComponent<Image>();
             spriteRenderer.enabled = true;
         }
-        if(upgradeBoolArray[2   ] == true){
+        if(upgradeBoolArray[2] == true){
+            textMeshPro.text = "Max";
             var spriteRenderer = square3.GetComponent<Image>();
             spriteRenderer.enabled = true;
+        }
+        if(upgradeBoolArray[0] == false){
+            textMeshPro.text = "100";
         }
     }
 
