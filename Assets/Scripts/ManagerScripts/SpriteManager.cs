@@ -209,9 +209,8 @@ public class SpriteManager : MonoBehaviour
         // the wealth one is already correct and can stay though
         // you might need to change the names accordingly for the modifySingleUpgrade or other switch statements
 
-       // ModifySingleUpgrade("launchers");
-        ModifySingleUpgrade("solarPanels"); 
-        ModifySingleUpgrade("fuelEfficiency");
+       ModifySingleUpgrade("launchers"); 
+        ModifySingleUpgrade("softwareUpdates");
         ModifySingleUpgrade("wealthExpediters");
     }
 
@@ -221,10 +220,10 @@ public class SpriteManager : MonoBehaviour
         var upgradeBoolArray = new bool[1];
         switch (upgradeName)
         {
-            case "fuelEfficiency":
+            case "softwareUpdates":
                 upgradeBoolArray = upManage.getUpgradeArray(upgradeName);
                 break;
-            case "solarPanels":
+            case "launchers":
                 upgradeBoolArray = upManage.getUpgradeArray(upgradeName);
                 break;
             case "wealthExpediters":
@@ -243,28 +242,6 @@ public class SpriteManager : MonoBehaviour
         switch (upgradeNam)
         {
             case "launchers":
-                if (arr[0])
-                {
-
-                }
-
-                if (arr[1])
-                {
-                    // disable launchers1 sprite
-
-
-                    // enable launchers2 sprite
-
-                }
-                if (arr[2])
-                {
-                    // disbale launchers2 sprite
-
-                    // enable launchers3 sprite
-
-                }
-                break;
-            case "solarPanels":
                 if (arr[0])
                 {
                     // enable solar1 sprite
@@ -291,7 +268,7 @@ public class SpriteManager : MonoBehaviour
 
                 }
                 break;
-            case "fuelEfficiency":
+            case "softwareUpdates":
                 if (arr[0])
                 {
                     // enable fuel1 sprite
