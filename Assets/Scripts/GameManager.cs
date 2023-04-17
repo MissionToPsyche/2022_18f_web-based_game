@@ -117,18 +117,18 @@ public class GameManager : MonoBehaviour
     {
         switch(upgradeNam)
         {
-            case "launchers":
+            case "launchers": // this is actually the thruster upgrade
                 if (arr[0])
                 {
-                    upgradeLaunchers1();
+                    upgradeThrusters1();
                 }
                 if (arr[1])
                 {
-                    upgradeLaunchers2();
+                    upgradeThrusters2();
                 }
                 if (arr[2])
                 {
-                    upgradeLaunchers3();
+                    upgradeThrusters3();
                 }
                 break;
             case "solarPanels":
@@ -159,7 +159,21 @@ public class GameManager : MonoBehaviour
                     upgradeWeightTransfer3();
                 }
                 break;
-            case "fuelEfficiency":
+            case "fuelEfficiency": // this is actually the launcher upgrade
+                if (arr[0])
+                {
+                    upgradeLaunchers1();
+                }
+                if (arr[1])
+                {
+                    upgradeLaunchers2();
+                }
+                if (arr[2])
+                {
+                    upgradeLaunchers3();
+                }
+                break;
+            case "softwareUpdates": // this is actually the fuel upgrade
                 if (arr[0])
                 {
                     upgradeFuelEfficiency1();
@@ -171,20 +185,6 @@ public class GameManager : MonoBehaviour
                 if (arr[2])
                 {
                     upgradeFuelEfficiency3();
-                }
-                break;
-            case "softwareUpdates":
-                if (arr[0])
-                {
-                    upgradeSoftwareUpdate1();
-                }
-                if (arr[1])
-                {
-                    upgradeSoftwareUpdate2();
-                }
-                if (arr[2])
-                {
-                    upgradeSoftwareUpdate3();
                 }
                 break;
             case "wealthExpediters":
@@ -210,135 +210,89 @@ public class GameManager : MonoBehaviour
     {
         // increase the launch speed minimally
         launch_speed = 65f;
-        Debug.Log(launch_speed);
-
-
     }
 
     public void upgradeLaunchers2()
     {
         // increase the launch speed moderately
         launch_speed = 90f;
-        Debug.Log(launch_speed);
-
-
-        // 
-
     }
 
     public void upgradeLaunchers3()
     {
         // increase the launch speed significantly 
         launch_speed = 125;
-        Debug.Log(launch_speed);
-
-
-        // 
     }
 
     public void upgradeSolarPanels1()
     {
-        // marginally increases the power of thrusters/boost
-        boost_speed = 27.5f;
-
-        // 
+        // marginally increases the efficiency of fuel
+        fuelBurnRate = 8f;
     }
 
     public void upgradeSolarPanels2()
     {
-        // moderately increases the power of thrusters/boost
-        boost_speed = 40;
-
-
-        // 
+        // moderately increases the efficiency of fuel
+        fuelBurnRate = 6f;
     }
 
     public void upgradeSolarPanels3()
     {
-        // significantly increases the power of thrusters/boost
-        boost_speed = 55f;
-
-
-        // 
+        // significantly increases the efficiency of fuel
+        fuelBurnRate = 4.5f;
     }
 
     public void upgradeWeightTransfer1()
     {
         // minimally reduce speed loss/impact from collisions
         collisionReduction = .66f;
-
-        // 
     }
 
     public void upgradeWeightTransfer2()
     {
         // moderately reduce speed loss/impact from collisions
         collisionReduction = .33f;
-
-        // 
     }
     public void upgradeWeightTransfer3()
     {
         // significantly reduce speed loss/impact from collisions
         collisionReduction = .1f;
-
-        // 
     }
 
-    public void upgradeSoftwareUpdate1()
+    public void upgradeThrusters1()
     {
-        // marginally increase horizontal move speed
-        move_speed = 25f;
-
-        // 
+        // marginally increase boost speed
+        boost_speed = 27.5f;
     }
 
-    public void upgradeSoftwareUpdate2()
+    public void upgradeThrusters2()
     {
-        // moderately increase horizontal move speed
-        move_speed = 30f;
-        Debug.Log(move_speed);
-
-
-        // 
+        // moderately increase boost speed
+        boost_speed = 40f;
     }
 
-    public void upgradeSoftwareUpdate3()
+    public void upgradeThrusters3()
     {
-        // significantly increase horizontal move speed
-        move_speed = 37.5f;
-
-
-        // 
+        // significantly increase boost speed
+        boost_speed = 55f;
     }
 
     public void upgradeFuelEfficiency1()
     {
         // marginally increase fuel efficiency/capacity
-        fuelBurnRate = 8f;
         maxFuel = 125;
-
-        // 
     }
 
     public void upgradeFuelEfficiency2()
     {
-        // moderately increase fuel efficiency/capacity
-        fuelBurnRate = 6f;
+        // moderately increase fuel capacity
         maxFuel = 165;
-
-
-        // 
     }
 
     public void upgradeFuelEfficiency3()
     {
-        // significantly increase fuel efficiency/capacity
-        fuelBurnRate = 4.5f;
+        // significantly increase fuel capacity
         maxFuel = 230f;
-
-
-        // 
     }
 
     public void upgradeWealthExpediter1()
@@ -346,8 +300,6 @@ public class GameManager : MonoBehaviour
         // marginally increase coins gained
         coinDistanceMultiplier = 1.5f;
         coinValue = 50;
-
-        // 
     }
 
     public void upgradeWealthExpediter2()
@@ -355,8 +307,6 @@ public class GameManager : MonoBehaviour
         // moderately increase coins gained
         coinDistanceMultiplier = 2f;
         coinValue = 75;
-
-        // 
     }
 
     public void upgradeWealthExpediter3()
@@ -364,8 +314,6 @@ public class GameManager : MonoBehaviour
         // significantly increase koins gained
         coinDistanceMultiplier = 3f;
         coinValue = 100;
-
-        // 
     }
 
 }

@@ -201,8 +201,16 @@ public class SpriteManager : MonoBehaviour
 
     public void modifyUpgradeVisuals()
     {
+        // the array from upgrade manager for launchers is actually the thruster upgrades
+        // the array from upgrade manager for software updates is actually the fuel upgrades
+        // the array from upgrade manager for fuelEfficiency is actually the launcher upgrades (we dont have a visual for launcher)
+
+        // so we need to modify launchers for thruster visuals, software for fuel visuals
+        // the wealth one is already correct and can stay though
+        // you might need to change the names accordingly for the modifySingleUpgrade or other switch statements
+
        // ModifySingleUpgrade("launchers");
-        ModifySingleUpgrade("solarPanels");
+        ModifySingleUpgrade("solarPanels"); 
         ModifySingleUpgrade("fuelEfficiency");
         ModifySingleUpgrade("wealthExpediters");
     }
