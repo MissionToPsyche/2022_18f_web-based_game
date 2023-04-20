@@ -15,6 +15,7 @@ public class ItemGenerator : MonoBehaviour
     [SerializeField] private Sprite cloud;
     [SerializeField] private Sprite fuel;
     [SerializeField] private Sprite bird;
+    [SerializeField] private Sprite star;
 
     private float coinStart = 0f;
     private float coinEnd = 10000000f;
@@ -23,13 +24,16 @@ public class ItemGenerator : MonoBehaviour
     private float astroidEnd = 10000000f;
 
     private float cloudStart = 0f;
-    private float cloudEnd = 5000f;
+    private float cloudEnd = 10000f;
 
     private float fuelStart = 0f;
     private float fuelEnd = 10000000f;
 
     private float birdStart = 0f;
-    private float birdEnd = 5000f;
+    private float birdEnd = 7500f;
+
+    private float starStart = 13500f;
+    private float starEnd = 100000000f;
 
     void Start()
     {
@@ -39,6 +43,7 @@ public class ItemGenerator : MonoBehaviour
         InvokeRepeating("CloudGenerator", 2.0f, 1f);
         InvokeRepeating("FuelGenerator", 2.0f, 5f);
         InvokeRepeating("BirdGenerator", 2.0f, 5f);
+        InvokeRepeating("StarGenerator", 2.0f, .5f);
 
         for(int i = 0; i < 5; i++){
             CloudGenerator();
@@ -118,6 +123,7 @@ public class ItemGenerator : MonoBehaviour
         Destroy(go, 30f);
         return;
     }
+
     private void FuelGenerator(){
         Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
         float y = tempPos.y;
@@ -159,6 +165,24 @@ public class ItemGenerator : MonoBehaviour
         //tempPos += new Vector3(-25f, 1, 0);
         go.GetComponent<Transform>().position = tempPos;
         go.GetComponent<Transform>().localScale = new Vector3(.15f,.15f,.15f);
+        Destroy(go, 30f);
+        return;
+    }
+
+    private void StarGenerator(){
+        Vector3 tempPos = psycheCraft.GetComponent<Transform>().position;
+        float y = tempPos.y;
+        if(!(starStart <= y && y <= starEnd)){
+            return;
+        }
+        GameObject go = new GameObject();
+        go.name = "Cloud";
+        go.AddComponent<SpriteRenderer>();
+        go.GetComponent<SpriteRenderer>().sprite = star;
+
+        tempPos += new Vector3(Random.Range(-20f,20f), Random.Range(50f,100f), 0);
+        go.GetComponent<Transform>().position = tempPos;
+        //go.GetComponent<Transform>().localScale = new Vector3(.1f,.1f,.1f);
         Destroy(go, 30f);
         return;
     }
