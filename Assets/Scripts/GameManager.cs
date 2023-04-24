@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -46,12 +47,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fuelSlider.value = testScript.currentFuel / maxFuel;
-        runEnd = testScript.isFalling_End;
-        if(runEnd)
-        {
-            runEnd = false;
-            RunEnded();
+        try{
+            fuelSlider.value = testScript.currentFuel / maxFuel;
+            runEnd = testScript.isFalling_End;
+            if(runEnd)
+            {
+                runEnd = false;
+                RunEnded();
+            }
+        }
+        catch(Exception e){
+
         }
     }
 

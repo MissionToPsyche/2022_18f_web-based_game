@@ -13,6 +13,7 @@ public static class DataTransferStatic
         distanceTraveled = 0f;
         coinsCollected = 0;
         flightDuration = 0f;
+        coinDistanceMultiplier = 0f;
     }
 
     public static void setDistanceTraveled(float distance){

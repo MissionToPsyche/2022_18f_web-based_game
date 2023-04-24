@@ -32,7 +32,7 @@ using UnityEngine.UI;
     private bool isGrounded = false;
     private bool isFalling_Boost = false;
     public static bool isFalling_End = false;
-    public static float currentFuel;
+    public static float currentFuel = 0;
     private float maxFuel;
     private float moveInput;
     private float fallingBoostThreshold;

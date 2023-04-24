@@ -1292,7 +1292,6 @@ GameObject:
   - component: {fileID: 510490906}
   - component: {fileID: 510490905}
   - component: {fileID: 510490904}
-  - component: {fileID: 510490913}
   - component: {fileID: 510490903}
   - component: {fileID: 510490907}
   - component: {fileID: 510490909}
@@ -1453,28 +1452,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverImage: {fileID: 2040657134}
   hoverTriggerImage: {fileID: 1851883605}
---- !u!114 &510490913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510490902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6075f985232bb34289c805d9ae0b275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boost_speed: 20
-  move_speed: 15
-  launch_speed: 50
-  maxFuel: 100
-  fuelBurnRate: 10
-  collisionReduction: 1
-  coinDistanceMultiplier: 1
-  coinValue: 10
-  runEnd: 0
-  fuelSlider: {fileID: 0}
 --- !u!1 &537491367
 GameObject:
   m_ObjectHideFlags: 0
